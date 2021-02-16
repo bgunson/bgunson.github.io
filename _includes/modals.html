@@ -15,13 +15,12 @@
                         <ul class="list-inline item-details">
                             {% if post.project-date %}
                                 <li>Date:
-                                    <strong><a href="#">{{ post.project-date }}</a>
-                                    </strong>
+                                    {{ post.project-date }}     
                                 </li>
                             {% endif %}
                             {% if post.source %}
-                                <li>Source Code:
-                                    <strong><a href="{{ post.source }}">{{ post.name }}</a>
+                                <li>
+                                    <strong><a href="{{ post.source }}">Source Code</a>
                                     </strong>
                                 </li>
                             {% endif %}
