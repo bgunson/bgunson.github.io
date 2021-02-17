@@ -18,12 +18,33 @@ Log is a simple record keeping application I am building with the intention of t
 
 ___
 
-#### Progress Update for Feb 5, 2021 
+#### Progress Update --- Feb 16, 2021
+
+##### Whats New?
+- Databse has been restructured to have a user logs as a subcollection of the main user collection. Going forward I will probably create a separate root collection for particular log data.
+- A dashboard where the user is taken upon login which displays all there logs. They can create a new log from that screen or go to view the chosen log.
+- I have decided to ditch the sidebar as I do not think there is enough information needed to warrant a sidebar. Now, the toolbar includes a drop down to select a log, make a new one or go to the dashboard to see all logs.
+
+##### Whats next?
+- Ability for the user to edit a log's attributes and delete a log
+- Allow user to create data sections for their logs
+
+
+
+![](assets/img/portfolio/log/dashboard_feb152021.png){:height="100%" width="100%"}*The new dashboard screen*
+
+___
+
+#### Progress Update --- Feb 5, 2021 
 
 So far, I have implemented my auth service (thanks to the amazing ui [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui) by Anthony Nahas) and now I am going onward to the database services. As it stands the app is set up with a Firebase I created and any new user that registers can create a log and see a selection on the sidebar of their currrent logs. 
 
 ![update](assets/img/portfolio/log/screenshot_feb52021.PNG){:height="100%" width="100%"}
 
+
 Further on the agenda is to make clean up the sidebar interface, and working on the main content area where the log data will be displayed and manipulated.
 
 ___
+
+
+<sub>Log icon by [Good Ware](https://www.flaticon.com/authors/good-ware) from [flaticon.com](https://www.flaticon.com/)</sub>
