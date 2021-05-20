@@ -2,8 +2,8 @@
 title: Bennett Gunson
 email: bengunson@gmail.com
 url: https://bgunson.github.io
-description: "Bennett Gunson - Computer Science Student"
-keywords: "your keywords, separated by commas"
+description: "Bennett Gunson | Computer Science Student, Software Developer, Outdoorsman"
+keywords: "computer scientist, software developer, web design, bgunson github, calgary, alberta, ucalgary"
 skills: "Tinker - Learn - Create"
 meta_author: Gunson Bennett
 
@@ -51,6 +51,8 @@ address:
   - line: Calgary, Alberta, Canada
 
 # Credits content
+credits: 'Forked from the <a href="https://github.com/jeromelachaud/freelancer-theme">Freelancer</a> theme, built with <a href="https://jekyllrb.com/">Jekyll</a> '
+
 credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
 
 # Build settings
