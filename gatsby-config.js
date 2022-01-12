@@ -4,6 +4,6 @@ module.exports = {
       siteUrl: `https://bengunson.me`,
     },
     plugins: [
-      // `gatsby-plugin-fontawesome-css`
+      'gatsby-plugin-dark-mode'
     ]
 }
