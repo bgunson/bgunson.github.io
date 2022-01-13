@@ -4,6 +4,13 @@ module.exports = {
       siteUrl: `https://bengunson.me`,
     },
     plugins: [
-      'gatsby-plugin-dark-mode'
+      'gatsby-plugin-dark-mode',
+      {
+        resolve: 'gatsby-source-rss-feed',
+        options: {
+          url: 'https://bengunson.me/blog/feed.xml',
+          name: 'BenBlog'
+        }
+      }
     ]
 }

@@ -2,7 +2,9 @@ import * as React from "react"
 import Layout from "../components/layout"
 import * as styles from "../styles/Home.module.css"
 
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import { graphql } from "gatsby";
+
+// import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 import { 
   FaTree, 
@@ -22,14 +24,16 @@ import {
 import { user, repos } from "../data/git"
 
 // markup
-const HomePage = () => {
+const HomePage = ({ data }) => {
 
-  const firstame = user.name.split(' ')[0];
+  const firstName = user.name.split(' ')[0];
+  const blogPosts = data.allFeedBenBlog.nodes || [{summary: 'No posts yet, please check in the future.'}];
+
 
   return (
     <Layout>
       <div className={styles.container}>
-        <ThemeToggler>
+        {/* <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <label className={styles.themer}>
               <input
@@ -40,10 +44,10 @@ const HomePage = () => {
               Dark mode
             </label>
           )}
-        </ThemeToggler>
+        </ThemeToggler> */}
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Hi, I'm { firstame }
+            Hi, I'm { firstName }
           </h1>
 
           {/* <Image src={user.avatar_url} alt="Avatar" width={256} height={256} /> */}
@@ -54,7 +58,7 @@ const HomePage = () => {
             { user.bio || 'Bio' }
           </p>
 
-          <h2>What Interests Me</h2>
+          <h2>My Interests</h2>
           <div className={styles.interests}>
             <ul>
               <li>Computer networks</li>
@@ -69,7 +73,6 @@ const HomePage = () => {
           </div>
 
           <h2>Projects</h2>
-          
           <div className={styles.grid}>
             {
               repos
@@ -94,6 +97,22 @@ const HomePage = () => {
               <h2>See All &rarr;</h2>
             </a>
           </div>
+
+          <h2>Recent Blog Posts</h2>
+          <div className={styles.container}>
+            {
+              blogPosts.map(post => {
+                return (
+                  <a href={post.link}>
+                    <h2>{ post.title } <small>{ post.pubDate ? '| ' + post.pubDate : ''}</small></h2>
+                    <p>{ post.summary.length > 500 ? post.summary.slice(0, 500) +  '...' : post.summary }</p>
+                    <hr></hr>
+                  </a>
+                )
+              })
+            }
+          </div>
+
           <h2>My Links</h2>
           <p>
             <a className={styles.linkicon} href="https://github.com/bgunson" aria-label="GitHub"><FaGithub size={36}/></a>
@@ -123,3 +142,17 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+export const query = graphql`
+  query BlogQuery {
+    allFeedBenBlog {
+      nodes {
+        id
+        summary
+        title
+        link
+        pubDate(formatString: "MMMM DD, YYYY")
+      }
+    }
+  }
+`
