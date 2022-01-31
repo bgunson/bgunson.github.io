@@ -1,15 +1,19 @@
 import React from "react"
+import { Helmet } from "react-helmet";
 import './layout.css';
+
 
 import { SiteIcons } from './site-icons'
 
-export default function Layout({ children }) {
+export default function Layout(props) {
+    const { children, buildTime, title, description } = props;
     return (
         <div>
-            <head>
-                <title>Bennett Gunson | Computer Science student, Software Developer, Outdoorsman</title>
-                <meta name="description" content="Get to know me and my recent projects related to software and more."></meta>
-            </head>
+            <Helmet>
+                <html lang="en"/>
+                <title>{ title }</title>
+                <meta name="description" content={description} />
+            </Helmet>
             <main>
                 {children}
             </main>
@@ -19,10 +23,11 @@ export default function Layout({ children }) {
                     color: 'var(--textNormal)',
                     transition: 'color 0.2s ease-out, background 0.2s ease-out',
                 }}>
-                Bennett Gunson
-                <span>
-                    <SiteIcons.FaTree/>&nbsp;<SiteIcons.FaBeer/>&nbsp;<SiteIcons.FaFish/>&nbsp;<SiteIcons.FaBiking/>&nbsp;<SiteIcons.FaMountain/>&nbsp;<SiteIcons.FaCar/>&nbsp;<SiteIcons.FaLaptopCode/>
-                </span>
+                <div style={{ textAlign: 'center'}}>
+                    <SiteIcons.FaTree/>&nbsp;<SiteIcons.FaCampground/>&nbsp;<SiteIcons.FaBeer/>&nbsp;<SiteIcons.FaFish/>&nbsp;Bennett Gunson&nbsp;<SiteIcons.FaBiking/>&nbsp;<SiteIcons.FaMountain/>&nbsp;<SiteIcons.FaCar/>&nbsp;<SiteIcons.FaLaptopCode/>
+                   <br/>
+                    <small>Last Build: { `${new Date(buildTime).toDateString()}, ${new Date(buildTime).toLocaleTimeString()}` }</small>
+                </div>
             </footer>
         </div>
     )

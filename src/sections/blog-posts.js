@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { SiteIcons } from '../components/site-icons'
 
-export const BlogPosts = ({props}) => {
+const BlogPosts = ({props}) => {
     if (props.config.enable) {
         
         return (
@@ -28,3 +28,4 @@ export const BlogPosts = ({props}) => {
     }
 
 }
+export default BlogPosts

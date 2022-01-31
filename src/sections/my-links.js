@@ -21,8 +21,7 @@ const getLinkIcon = (name) => {
 
 }
 
-
-export const MyLinks = ({props}) => {
+const MyLinks = ({props}) => {
     return (
         <section style={{ textAlign: 'center' }}>
             <h2>My Links</h2>
@@ -34,3 +33,5 @@ export const MyLinks = ({props}) => {
         </section>
     )
 }
+
+export default MyLinks

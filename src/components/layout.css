@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -68,4 +69,41 @@ footer a {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.tooltip {
+  position: relative;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  line-height: normal;
+  visibility: hidden;
+  min-width: 150px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  padding: 5px 10px;
+  left: 50%;
+  margin-left: -75px
+}
+
+.tooltiptop {
+  z-index: 1;
+  bottom: 110%;
+}
+
+.tooltipbtm {
+  top: 95%
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+circle {
+  cursor: pointer;
 }

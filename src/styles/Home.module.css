@@ -25,7 +25,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-
   
 .posts {
   padding: 0 4%;
@@ -55,9 +54,11 @@ a {
 }
 
 .description {
-  /* margin: 4rem 0; */
-  /* line-height: 1.5; */
+  line-height: 1.5;
   font-size: 1.5rem;
+  font-weight: 400;
+  white-space: pre-line;
+  line-height: 0.8;
 }
 
 .code {
@@ -120,26 +121,37 @@ a {
   margin-left: 0.5rem;
 }
   
-@media (max-width: 600px) {
-    .grid {
-      width: 100%;
-      flex-direction: column;
-    }
 
-  .interests {
-      /* flex-direction: column;
-      width: 100%;
-      /* justify-content: left; */
-      margin-left: 2em;
-      text-align: left;
-  }
+/* Interests */
+.interests {
+  margin: 0 15%;
+  /* border: 1px solid lightgrey;
+  border-radius: 50px; */
+  box-sizing: border-box;
+  padding: 1px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 2.5rem;
+} 
+
+.interestitem {
+  margin: 5px;
+  background-color: #0070f3;
+  padding: 5px;
+  border-radius: 6px;
+  color: white; 
 }
 
-  /* Interests */
-.interests {
-    display: flex;
-    /* align-items: center;
-    justify-content: center; */
-    flex-wrap: wrap;
-    max-width: 1200px;
+@media screen and (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .interests {
+    margin: 0 5%;
+  }
 }

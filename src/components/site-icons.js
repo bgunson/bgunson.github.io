@@ -17,7 +17,8 @@ import {
     FaBlog, 
     FaFish, 
     FaBeer, 
-    FaMountain, 
+    FaMountain,
+    FaCampground, 
     FaCar, 
     FaLaptopCode, 
     FaEnvelope, 
@@ -27,7 +28,8 @@ import {
     FaPython,
     FaHtml5,
     FaSass,
-    FaCss3
+    FaCss3,
+    FaInfoCircle
   } from 'react-icons/fa';
   
 import { 
@@ -60,6 +62,7 @@ export const SiteIcons = {
     FaBlog, 
     FaFish, 
     FaBeer, 
+    FaCampground,
     FaMountain, 
     FaCar, 
     FaLaptopCode, 
@@ -71,6 +74,7 @@ export const SiteIcons = {
     FaPython,
     FaHtml5,
     FaSwift,
+    FaInfoCircle,
 
-    MdOutlineDateRange
+    MdOutlineDateRange,
 }

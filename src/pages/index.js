@@ -1,63 +1,46 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import { LangIcon } from "../components/lang-icon"
+import LangIcon from "../components/lang-icon"
 
-import { MyLinks } from '../sections/my-links'
-import { BlogPosts } from '../sections/blog-posts'
+import MyLinks from '../sections/my-links'
+import BlogPosts  from '../sections/blog-posts'
+import LangChart from "../components/lang-chart"
+import Interests from "../sections/interests"
 
 import * as styles from "../styles/Home.module.css"
 
 import { graphql } from "gatsby";
 
-// import { SiteIcons } from '../components/site-icons'
-
-import 'react-tooltip';
-
-
-
 // markup
 const HomePage = ({ data }) => {
 
+  const lastBuild = data.allSiteBuildMetadata.nodes[0].buildTime;
   const user = data.github.user;
-  const config = data.allSite.nodes[0].siteMetadata.config;
-  const links = config.links;
+
+  const meta = data.allSite.nodes[0].siteMetadata;
+  const { config, title, description } = meta
 
   const blogPosts = data.allFeedBlog.nodes || [{summary: 'No posts yet, please check in the future.'}];
 
   const repos = data.github.user.repositories.nodes.filter(r => config.github.showcase.includes(r.name)) || [];
 
-
   return (
-    <Layout>
+    <Layout buildTime={lastBuild} title={title} description={description}>
       <div className={styles.container}>
           <h1 className={styles.title}>
             Hi, I'm { user.name.split(' ')[0] }
           </h1>
 
-          {/* <Image src={user.avatar_url} alt="Avatar" width={256} height={256} /> */}
-
-          {/* <h2>{user.login}</h2> */}
-
-        <section>
-        <p className={styles.description}>
-            { user.bio || 'Bio' }
-          </p>
+        <section style={{textAlign: 'center', marginTop: '20px'}}>
+          <span className={styles.description}>
+            { user.bio.split(',').join('\n') }
+          </span>
         </section>
 
+        <Interests interests={config.interests}/>
+
         <section>
-        <h2>My Interests</h2>
-          <div className={styles.interests}>
-            <ul>
-              <li>Computer networks</li>
-              <li>IoT</li>
-              <li>Devloping web applications</li>
-            </ul>
-            <ul>
-              <li>Fly fishing</li>
-              <li>Mountain and road biking</li>
-              <li>DIY car maintenance</li>
-            </ul>
-          </div>
+          <LangChart repos={user.repositories} blurbs={config.languages}/>
         </section>
 
         <section>
@@ -70,6 +53,9 @@ const HomePage = ({ data }) => {
                     <a href={repo.url} className={styles.card}>
                       <h2 style={{ textAlign: 'left'}}>{ repo.name } &rarr;</h2>
                       <p>
+                        { repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description }
+                      </p>
+                      <div style={{ position: 'absolute', bottom: '15px', width: '105%', display: 'flex'}}>
                         {
                           repo.languages.edges.map(lang => {
                             var prop = {
@@ -81,10 +67,7 @@ const HomePage = ({ data }) => {
                             return <LangIcon {...prop}/>
                           })
                         }
-                      </p>
-                      <p>
-                        { repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description }
-                      </p>
+                      </div>
                     </a>
                   )
                 }
@@ -97,9 +80,9 @@ const HomePage = ({ data }) => {
           </div>
         </section>
 
-          <BlogPosts props={{config: config.blog, posts: blogPosts}}/>
+        <BlogPosts props={{config: config.blog, posts: blogPosts}}/>
 
-          <MyLinks props={links}/>
+        <MyLinks props={config.links}/>
 
       </div>
 
@@ -111,9 +94,16 @@ export default HomePage
 
 export const query = graphql`
   query PageQuery {
+    allSiteBuildMetadata {
+      nodes {
+        buildTime
+      }
+    }
     allSite {
       nodes {
         siteMetadata {
+          title
+          description
           config {
             blog {
               enable
@@ -125,6 +115,14 @@ export const query = graphql`
             }
             github {
               showcase
+            }
+            interests {
+              name
+              blurb
+            }
+            languages {
+              name
+              blurb
             }
           }
         }
@@ -141,9 +139,9 @@ export const query = graphql`
     }
     github {
       user(login: "bgunson") {
-        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30) {
+        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC) {
           nodes {
-            languages(orderBy: {field: SIZE, direction: DESC}, first: 10) {
+            languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
               edges {
                 node {
                   id
@@ -162,6 +160,7 @@ export const query = graphql`
         bio
         avatarUrl
         name
+        login
         location
       }
     }

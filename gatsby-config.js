@@ -5,12 +5,13 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-      title: `Bennett Gunson`,
-      description: `Computer Science student, Software DEveloper, Outdoorsman`,
+      title: `Hi, I'm Bennett`,
+      description: `Computer Science student, Software Developer, Outdoorsman`,
       siteUrl: `https://bengunson.me`,
       config: config
     },
     plugins: [
+      'gatsby-plugin-react-helmet',
       'gatsby-plugin-dark-mode',
       {
         resolve: 'gatsby-source-rss-feed',

@@ -17,13 +17,7 @@ const headingStyles = {
 const paragraphStyles = {
   marginBottom: 48,
 }
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+
 
 // markup
 const NotFoundPage = () => {
@@ -39,13 +33,10 @@ const NotFoundPage = () => {
           </span>{" "}
           we couldn’t find what you were looking for.
           <br />
-          {process.env.NODE_ENV === "development" ? (
-            <>
-              <br />
-              Try creating a page in <code style={codeStyles}>src/pages/</code>.
-              <br />
-            </>
-          ) : null}
+          <p>Are you looking for any of the following?</p>
+          <ul>
+            <li><a style={{color: 'goldenrod'}} href="/resume.pdf">My resume</a> (updated Jan. 2022)</li>
+          </ul>
           <br />
           <Link to="/">Go home</Link>.
         </p>
