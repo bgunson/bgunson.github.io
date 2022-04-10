@@ -4,20 +4,20 @@ import * as styles from '../styles/Home.module.css'
 const Interests = ({ interests }) => {
 
     return (
-        <section style={{margin: '2% 0'}}>
+        <section style={{ margin: '2% 0' }}>
             <h2>My Interests</h2>
             <div className={styles.interests}>
-                { 
+                {
                     interests.map(interest => {
                         if (interest.blurb) {
                             return (
                                 <div className='tooltip'>
-                                    <span className='tooltiptext tooltiptop'>{ interest.blurb }</span>
-                                    <span className={styles.interestitem}>{ interest.name }</span>
+                                    <span className='tooltiptext tooltiptop'>{interest.blurb}</span>
+                                    <span className={styles.interestitem}>{interest.name}</span>
                                 </div>
                             )
                         } else {
-                            return <span className={styles.interestitem} style={{ lineHeight: 'normal'}}>{ interest.name }</span>
+                            return <span className={styles.interestitem} style={{ lineHeight: 'normal' }}>{interest.name}</span>
 
                         }
                     })
