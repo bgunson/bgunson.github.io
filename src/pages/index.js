@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import LangIcon from "../components/lang-icon"
 
 import MyLinks from '../sections/my-links'
-import BlogPosts  from '../sections/blog-posts'
+import BlogPosts from '../sections/blog-posts'
 import LangChart from "../components/lang-chart"
 import Interests from "../sections/interests"
 
@@ -20,27 +20,27 @@ const HomePage = ({ data }) => {
   const meta = data.allSite.nodes[0].siteMetadata;
   const { config, title, description } = meta
 
-  const blogPosts = data.allFeedBlog.nodes || [{summary: 'No posts yet, please check in the future.'}];
+  const blogPosts = data.allFeedBlog.nodes || [{ summary: 'No posts yet, please check in the future.' }];
 
   const repos = data.github.user.repositories.nodes.filter(r => config.github.showcase.includes(r.name)) || [];
 
   return (
     <Layout buildTime={lastBuild} title={title} description={description}>
       <div className={styles.container}>
-          <h1 className={styles.title}>
-            Hi, I'm { user.name.split(' ')[0] }
-          </h1>
+        <h1 className={styles.title}>
+          Hi, I'm {user.name.split(' ')[0]}
+        </h1>
 
-        <section style={{textAlign: 'center', marginTop: '20px'}}>
+        <section style={{ textAlign: 'center', marginTop: '20px' }}>
           <span className={styles.description}>
-            { user.bio.split(',').join('\n') }
+            {user.bio.split(',').join('\n')}
           </span>
         </section>
 
-        <Interests interests={config.interests}/>
+        <Interests interests={config.interests} />
 
         <section>
-          <LangChart repos={user.repositories} blurbs={config.languages}/>
+          <LangChart repos={user.repositories} blurbs={config.languages} />
         </section>
 
         <section>
@@ -48,41 +48,41 @@ const HomePage = ({ data }) => {
           <div className={styles.grid}>
             {
               repos.map((repo) => {
-                  const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
-                  return (
-                    <a href={repo.url} className={styles.card}>
-                      <h2 style={{ textAlign: 'left'}}>{ repo.name } &rarr;</h2>
-                      <p>
-                        { repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description }
-                      </p>
-                      <div style={{ position: 'absolute', bottom: '15px', width: '105%', display: 'flex'}}>
-                        {
-                          repo.languages.edges.map(lang => {
-                            var prop = {
-                              name: lang.node.name,
-                              color: lang.node.color,
-                              size: lang.size,
-                              percentile: Math.round((lang.size / total) * 1000) / 10
-                            }
-                            return <LangIcon {...prop}/>
-                          })
-                        }
-                      </div>
-                    </a>
-                  )
-                }
+                const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
+                return (
+                  <a href={repo.url} className={styles.card}>
+                    <h2 style={{ textAlign: 'left' }}>{repo.name} &rarr;</h2>
+                    <p>
+                      {repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description}
+                    </p>
+                    <div style={{ position: 'absolute', bottom: '15px', width: '105%', display: 'flex' }}>
+                      {
+                        repo.languages.edges.map(lang => {
+                          var prop = {
+                            name: lang.node.name,
+                            color: lang.node.color,
+                            size: lang.size,
+                            percentile: Math.round((lang.size / total) * 1000) / 10
+                          }
+                          return <LangIcon {...prop} />
+                        })
+                      }
+                    </div>
+                  </a>
+                )
+              }
               )
             }
 
-            <a href={`https://github.com/${user.login}?tab=repositories`}className={styles.card}>
+            <a href={`https://github.com/${user.login}?tab=repositories`} className={styles.card}>
               <h2 style={{ textAlign: 'left' }}>See All &rarr;</h2>
             </a>
           </div>
         </section>
 
-        <BlogPosts props={{config: config.blog, posts: blogPosts}}/>
+        <BlogPosts props={{ config: config.blog, posts: blogPosts }} />
 
-        <MyLinks props={config.links}/>
+        <MyLinks props={config.links} />
 
       </div>
 

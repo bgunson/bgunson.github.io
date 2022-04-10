@@ -9,19 +9,19 @@
  * 
  */
 
-import { 
-    FaTree, 
-    FaDocker, 
-    FaGithub, 
-    FaLinkedin, 
-    FaBlog, 
-    FaFish, 
-    FaBeer, 
+import {
+    FaTree,
+    FaDocker,
+    FaGithub,
+    FaLinkedin,
+    FaBlog,
+    FaFish,
+    FaBeer,
     FaMountain,
-    FaCampground, 
-    FaCar, 
-    FaLaptopCode, 
-    FaEnvelope, 
+    FaCampground,
+    FaCar,
+    FaLaptopCode,
+    FaEnvelope,
     FaBiking,
     FaSwift,
     FaJava,
@@ -30,17 +30,17 @@ import {
     FaSass,
     FaCss3,
     FaInfoCircle
-  } from 'react-icons/fa';
-  
-import { 
-    SiPypi, 
-    SiTypescript, 
+} from 'react-icons/fa';
+
+import {
+    SiPypi,
+    SiTypescript,
     SiJavascript,
     SiCsharp,
     SiRuby,
     SiDart,
     SiKotlin,
-    SiThingiverse 
+    SiThingiverse
 } from 'react-icons/si'
 
 import { MdOutlineDateRange } from 'react-icons/md'
@@ -55,18 +55,18 @@ export const SiteIcons = {
     SiKotlin,
     SiThingiverse,
 
-    FaTree, 
-    FaDocker, 
-    FaGithub, 
-    FaLinkedin, 
-    FaBlog, 
-    FaFish, 
-    FaBeer, 
+    FaTree,
+    FaDocker,
+    FaGithub,
+    FaLinkedin,
+    FaBlog,
+    FaFish,
+    FaBeer,
     FaCampground,
-    FaMountain, 
-    FaCar, 
-    FaLaptopCode, 
-    FaEnvelope, 
+    FaMountain,
+    FaCar,
+    FaLaptopCode,
+    FaEnvelope,
     FaBiking,
     FaSass,
     FaCss3,
