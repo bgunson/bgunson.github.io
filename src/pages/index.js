@@ -2,10 +2,10 @@ import * as React from "react"
 import Layout from "../components/layout"
 import LangIcon from "../components/lang-icon"
 
-import MyLinks from '../sections/my-links'
-import BlogPosts from '../sections/blog-posts'
+import MyLinks from '../components/my-links'
+import BlogPosts from '../components/blog-posts'
 import LangChart from "../components/lang-chart"
-import Interests from "../sections/interests"
+import Interests from "../components/interests"
 
 import * as styles from "../styles/Home.module.css"
 
@@ -36,6 +36,8 @@ const HomePage = ({ data }) => {
             {user.bio.split(',').join('\n')}
           </span>
         </section>
+
+        <a href="bennettgunson_resume.pdf" className={styles.linkbtn}>View resume</a>
 
         <Interests interests={config.interests} />
 

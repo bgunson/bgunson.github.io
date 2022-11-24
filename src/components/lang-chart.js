@@ -5,11 +5,12 @@ import { SiteIcons } from './site-icons';
 
 const LangChart = ({ repos, blurbs }) => {
     const totalRepos = repos.nodes.length;
-
-    var totalSize = 0
-    const allLanguagesData = {}
+    var totalSize = 0;
+    const allLanguagesData = {};
+    const includeLanguages = blurbs.map(b => b.name);
     repos.nodes.forEach(repo => {
         repo.languages.edges.forEach(language => {
+            if (!includeLanguages.includes(language.node.name.toLowerCase())) return;
             allLanguagesData[language.node.name] = allLanguagesData[language.node.name] || { label: '', value: 0, color: '' }
             totalSize += language.size
             allLanguagesData[language.node.name].label = language.node.name

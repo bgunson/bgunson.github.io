@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { SiteIcons } from '../components/site-icons'
+import { SiteIcons } from './site-icons'
 
 const iconSize = 36;
 
