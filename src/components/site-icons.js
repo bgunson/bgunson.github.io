@@ -29,7 +29,8 @@ import {
     FaHtml5,
     FaSass,
     FaCss3,
-    FaInfoCircle
+    FaInfoCircle,
+    FaFile
 } from 'react-icons/fa';
 
 import {
@@ -75,6 +76,7 @@ export const SiteIcons = {
     FaHtml5,
     FaSwift,
     FaInfoCircle,
+    FaFile,
 
     MdOutlineDateRange,
 }

@@ -35,7 +35,7 @@ const NotFoundPage = () => {
           <br />
           <p>Are you looking for any of the following?</p>
           <ul>
-            <li><a style={{color: 'goldenrod'}} href="/resume.pdf">My resume</a> (updated Jan. 2022)</li>
+            <li><a style={{color: 'goldenrod'}} href="bennettgunson_resume.pdf">My resume</a> (updated Nov. 2022)</li>
           </ul>
           <br />
           <Link to="/">Go home</Link>.

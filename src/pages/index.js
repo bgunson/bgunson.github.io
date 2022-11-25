@@ -10,6 +10,7 @@ import Interests from "../components/interests"
 import * as styles from "../styles/Home.module.css"
 
 import { graphql } from "gatsby";
+import { SiteIcons } from "../components/site-icons"
 
 // markup
 const HomePage = ({ data }) => {
@@ -36,8 +37,9 @@ const HomePage = ({ data }) => {
             {user.bio.split(',').join('\n')}
           </span>
         </section>
+        <br></br>
+        <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile/> View résumé</a>
 
-        <a href="bennettgunson_resume.pdf" className={styles.linkbtn}>View resume</a>
 
         <Interests interests={config.interests} />
 
