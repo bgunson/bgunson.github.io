@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { SiteIcons } from './site-icons'
+import * as styles from "../styles/Home.module.css"
 
 const iconSize = 36;
 
@@ -30,6 +31,11 @@ const MyLinks = ({ props }) => {
                     props.map(link => <a href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
                 }
             </p>
+            <br></br>
+            <p>
+                <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile /> View résumé</a>
+            </p>
+
         </section>
     )
 }

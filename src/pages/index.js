@@ -37,9 +37,6 @@ const HomePage = ({ data }) => {
             {user.bio.split(',').join('\n')}
           </span>
         </section>
-        <br></br>
-        <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile /> View résumé</a>
-
 
         <Interests interests={config.interests} />
 
