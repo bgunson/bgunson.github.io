@@ -23,7 +23,7 @@ const HomePage = ({ data }) => {
 
   const blogPosts = data.allFeedBlog.nodes || [{ summary: 'No posts yet, please check in the future.' }];
 
-  const repos = data.github.user.repositories.nodes.filter(r => config.github.showcase.includes(r.name)) || [];
+  const repos = config.github.showcase.map(repoName => data.github.user.repositories.nodes.find(r => r.name.toLowerCase() === repoName.toLowerCase()));
 
   return (
     <Layout buildTime={lastBuild} title={title} description={description}>
@@ -38,7 +38,7 @@ const HomePage = ({ data }) => {
           </span>
         </section>
         <br></br>
-        <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile/> View résumé</a>
+        <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile /> View résumé</a>
 
 
         <Interests interests={config.interests} />
@@ -47,11 +47,17 @@ const HomePage = ({ data }) => {
           <LangChart repos={user.repositories} blurbs={config.languages} />
         </section>
 
-        <section>
-          <h2>Projects</h2>
+        <section className={styles.projects}>
+          <div className={styles.inline}>
+            <h2>
+              Projects
+            </h2>
+            <a href={`https://github.com/${user.login}?tab=repositories`}>See All &rarr;</a>
+          </div>
           <div className={styles.grid}>
             {
               repos.map((repo) => {
+                if (!repo) return;
                 const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
                 return (
                   <a href={repo.url} className={styles.card}>
@@ -78,9 +84,9 @@ const HomePage = ({ data }) => {
               )
             }
 
-            <a href={`https://github.com/${user.login}?tab=repositories`} className={styles.card}>
+            {/* <a href={`https://github.com/${user.login}?tab=repositories`} className={styles.card}>
               <h2 style={{ textAlign: 'left' }}>See All &rarr;</h2>
-            </a>
+            </a> */}
           </div>
         </section>
 

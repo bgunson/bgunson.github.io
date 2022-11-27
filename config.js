@@ -4,10 +4,11 @@ module.exports = {
         /** List your github repos you want to display as "projects" */
         showcase: [
             'onboardpi',
+            'FoodBee-App',
+            'studybuddy',
+            'learnlylog',
+            'UDeal',
             'obd-socketio',
-            'HashMash',
-            'TaffyTangle',
-            'object-serialization'
         ]
     },
 
