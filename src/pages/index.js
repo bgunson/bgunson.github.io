@@ -27,6 +27,7 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout buildTime={lastBuild} title={title} description={description}>
+      {/* <div id="sketch"></div> */}
       <div className={styles.container}>
         <h1 className={styles.title}>
           Hi, I'm {user.name.split(' ')[0]}
@@ -57,7 +58,7 @@ const HomePage = ({ data }) => {
                 if (!repo) return;
                 const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
                 return (
-                  <a href={repo.url} className={styles.card}>
+                  <a key={repo.id} href={repo.url} className={styles.card}>
                     <h2 style={{ textAlign: 'left' }}>{repo.name} &rarr;</h2>
                     <p>
                       {repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description}
@@ -71,7 +72,7 @@ const HomePage = ({ data }) => {
                             size: lang.size,
                             percentile: Math.round((lang.size / total) * 1000) / 10
                           }
-                          return <LangIcon {...prop} />
+                          return <LangIcon key={prop.name + prop.percentile} {...prop} />
                         })
                       }
                     </div>
@@ -87,9 +88,13 @@ const HomePage = ({ data }) => {
           </div>
         </section>
 
-        <BlogPosts props={{ config: config.blog, posts: blogPosts }} />
+        <section>
+          <BlogPosts props={{ config: config.blog, posts: blogPosts }} />
+        </section>
 
-        <MyLinks props={config.links} />
+        <section>
+          <MyLinks props={config.links} />
+        </section>
 
       </div>
 

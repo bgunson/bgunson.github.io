@@ -24,11 +24,11 @@ const getLinkIcon = (name) => {
 
 const MyLinks = ({ props }) => {
     return (
-        <section style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
             <h2>My Links</h2>
             <p>
                 {
-                    props.map(link => <a href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
+                    props.map(link => <a key={link.name} href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
                 }
             </p>
             <br></br>
@@ -36,7 +36,7 @@ const MyLinks = ({ props }) => {
                 <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile /> View résumé</a>
             </p>
 
-        </section>
+        </div>
     )
 }
 

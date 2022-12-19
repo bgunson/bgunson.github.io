@@ -11,13 +11,13 @@ const Interests = ({ interests }) => {
                     interests.map(interest => {
                         if (interest.blurb) {
                             return (
-                                <div className='tooltip'>
+                                <div key={interest.name} className='tooltip'>
                                     <span className='tooltiptext tooltiptop'>{interest.blurb}</span>
                                     <span className={styles.interestitem}>{interest.name}</span>
                                 </div>
                             )
                         } else {
-                            return <span className={styles.interestitem} style={{ lineHeight: 'normal' }}>{interest.name}</span>
+                            return <span key={interest.name} className={styles.interestitem} style={{ lineHeight: 'normal' }}>{interest.name}</span>
 
                         }
                     })
