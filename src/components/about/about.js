@@ -4,7 +4,7 @@ import LangChart from './lang-chart';
 
 const About = ({ config, user }) => {
     return (
-        <section>
+        <section id="about">
             <Interests interests={config.interests} />
             <LangChart repos={user.repositories} blurbs={config.languages} />
         </section>

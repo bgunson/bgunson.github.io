@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-scroll';
 import { SiteIcons } from '../shared/site-icons';
 
 const iconSize = 36;
@@ -31,7 +32,10 @@ const Footer = ({ lastBuild, links }) => {
             }}>
 
             <div style={{ display: 'flex', flex: '1', alignItems: 'center', flexDirection: 'column', textAlign: 'center' }}>
-                <div style={{ display: 'flex', marginBottom: '20px' }}>
+
+                <Link to="header" smooth duration={1000}><SiteIcons.FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }}/></Link>
+
+                <div style={{ display: 'flex', marginBottom: '40px' }}>
 
                     {
                         links.map(link => <a key={link.name} href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
@@ -40,7 +44,7 @@ const Footer = ({ lastBuild, links }) => {
                 </div>
 
 
-                <div>
+                <div style={{color: 'grey'}}>
                     <SiteIcons.FaTree />&nbsp;<SiteIcons.FaCampground />&nbsp;<SiteIcons.FaBeer />&nbsp;<SiteIcons.FaFish />&nbsp;Bennett Gunson&nbsp;<SiteIcons.FaBiking />&nbsp;<SiteIcons.FaMountain />&nbsp;<SiteIcons.FaCar />&nbsp;<SiteIcons.FaLaptopCode />
                     <br />
                     <small>Last Build: {`${new Date(lastBuild).toDateString()}, ${new Date(lastBuild).toLocaleTimeString()}`}</small>
