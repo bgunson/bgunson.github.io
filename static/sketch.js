@@ -5,7 +5,7 @@ const bg = 10;
 
 function setup(){
     var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
-    // canvas.parent("sketch");
+    canvas.parent("sketch");
     translate(-width/2, -height/2);
     noStroke();
     fill(204);
