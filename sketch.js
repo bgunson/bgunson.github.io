@@ -14,6 +14,8 @@ function setup(){
     for(let i = 0;i < numO;i++) {
         orbitals.push(new Orbital());
     }
+
+    if (window.innerWidth < 600) noLoop();
 }
 
 function mouseWheel(event) {
@@ -33,7 +35,6 @@ function mouseWheel(event) {
 
 function draw(){
     translate(-width/2, -height/2);
-    delay(10);
     background(bg);
     translate(width / 2, height / 2);
     pointLight(200, 200, 200, 0, 0, -100);
@@ -70,15 +71,4 @@ class Orbital{
         sphere(this.rad);
     }
 
-}
-
-
-function delay( milliseconds){
-   var start = new Date().getTime();
-   var stop=false;
-   while(!stop) {
-      if ((new Date().getTime() - start) > milliseconds){
-         stop=true;
-    }
-  }
 }
