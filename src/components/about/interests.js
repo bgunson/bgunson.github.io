@@ -1,10 +1,10 @@
 import React from 'react'
-import * as styles from '../styles/Home.module.css'
+import * as styles from '../../styles/Home.module.css'
 
 const Interests = ({ interests }) => {
 
     return (
-        <section style={{ margin: '2% 0' }}>
+        <div style={{ margin: '2% 0' }}>
             <h2>My Interests</h2>
             <div className={styles.interests}>
                 {
@@ -23,7 +23,7 @@ const Interests = ({ interests }) => {
                     })
                 }
             </div>
-        </section>
+        </div>
     )
 }
 

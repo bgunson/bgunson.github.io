@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { SiteIcons } from '../components/site-icons'
+import { SiteIcons } from '../shared/site-icons'
 
-const BlogPosts = ({ props }) => {
+const Blog = ({ props }) => {
     if (props.config.enable) {
 
         return (
-            <div>
+            <section>
                 <h2 style={{ textAlign: 'center' }}>Recent Blog Posts</h2>
                 <div style={{ padding: '0 4%' }}>
                     {
@@ -20,11 +20,11 @@ const BlogPosts = ({ props }) => {
                         })
                     }
                 </div>
-            </div>
+            </section>
         )
     } else {
         return null
     }
 
 }
-export default BlogPosts
+export default Blog;

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import BubbleChart from '@weknow/react-bubble-chart-d3';
-import { SiteIcons } from './site-icons';
+import { SiteIcons } from '../shared/site-icons';
 
 const LangChart = ({ repos, blurbs }) => {
     const totalRepos = repos.nodes.length;

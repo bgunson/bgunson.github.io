@@ -30,7 +30,9 @@ import {
     FaSass,
     FaCss3,
     FaInfoCircle,
-    FaFile
+    FaFile,
+    FaAngleDown,
+    FaAngleUp
 } from 'react-icons/fa';
 
 import {
@@ -77,6 +79,8 @@ export const SiteIcons = {
     FaSwift,
     FaInfoCircle,
     FaFile,
+    FaAngleDown,
+    FaAngleUp,
 
     MdOutlineDateRange,
 }

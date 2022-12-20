@@ -6,6 +6,24 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 0 20%;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
 canvas {
   position: fixed !important;
   top: 0;
@@ -19,7 +37,7 @@ a {
   /* text-decoration: none; */
 }
 a:hover {
-  color: #1565c0;
+  color: orange;
 }
 
 * {
@@ -56,17 +74,15 @@ a:hover {
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  font-weight: 500;
+  text-align: left;
 }
 
-.title,
-.description {
-  text-align: center;
-}
 
 .description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-  font-weight: 400;
+  line-height: 2;
+  font-size: 1.15rem;
+  font-weight: 300;
   white-space: pre-line;
   line-height: 0.8;
 }

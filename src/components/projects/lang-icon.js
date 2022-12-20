@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { SiteIcons } from './site-icons';
+import { SiteIcons } from '../shared/site-icons';
 
 
 
