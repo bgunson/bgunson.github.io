@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../styles/Home.module.css'
+import * as styles from '../../styles/Home.module.css'
 
 const Interests = ({ interests }) => {
 
