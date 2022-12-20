@@ -15,7 +15,6 @@ const BlogPosts = ({ props }) => {
                                     <h3>{post.title}</h3>
                                     <p><SiteIcons.MdOutlineDateRange /> {post.pubDate ? post.pubDate : ''}</p>
                                     <p>{post.summary.length > 500 ? post.summary.slice(0, 500) + '...' : post.summary}</p>
-                                    <hr></hr>
                                 </a>
                             )
                         })

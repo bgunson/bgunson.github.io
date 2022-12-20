@@ -25,7 +25,6 @@ function mouseWheel(event) {
             thetaM-=0.5;
         }
     }, 125);
-    // setTimeout(() => thetaM = 1, 2000);
 }
 
 function draw(){
