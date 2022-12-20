@@ -17,7 +17,7 @@ const Header = ({ user }) => {
             <Fade left duration={1000} delay={1000} distance="30px">
                 <div style={{ marginTop: '10px', textAlign: 'left' }}>
                     <span className={styles.description}>
-                        {user.bio.toUpperCase()}
+                        {window.innerWidth > 600 ?  user.bio.toUpperCase() : user.bio.split(',').join('\n\n').toUpperCase() }
                     </span>
                 </div>
             </Fade>
