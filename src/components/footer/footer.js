@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-scroll';
 import { SiteIcons } from '../shared/site-icons';
+import * as styles from '../../styles/Home.module.css';
 
 const iconSize = 36;
 
@@ -36,13 +37,15 @@ const Footer = ({ lastBuild, links }) => {
 
                 <Link to="header" smooth duration={1000}><SiteIcons.FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }}/></Link>
 
-                <div style={{ display: 'flex', marginBottom: '40px' }}>
+                <div style={{ display: 'flex' }}>
 
                     {
                         links.map(link => <a key={link.name} href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
                     }
 
                 </div>
+
+                <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile /> View résumé</a>
 
 
                 <div style={{color: 'grey'}}>
