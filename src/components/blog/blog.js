@@ -7,24 +7,24 @@ const Blog = ({ props }) => {
     if (props.config.enable) {
 
         return (
-            <section id="blog" className={styles.blog}>
-                <h2>Recent Blog Posts</h2>
-                <div className={styles.grid}>
-                    {
-                        props.posts.slice(0, 3).map(post => {
-                            return (
-                                <Fade key={post.id} bottom duration={1000}>
-                                    <a href={post.link} className={styles.blogcard}>
+            <Fade slide right>
+                <section id="blog" className={styles.blog}>
+                    <h2>Recent Blog Posts</h2>
+                    <div className={styles.grid}>
+                        {
+                            props.posts.slice(0, 3).map(post => {
+                                return (
+                                    <a key={post.id} href={post.link} className={styles.blogcard}>
                                         <h3>{post.title}</h3>
                                         <p><SiteIcons.MdOutlineDateRange /> {post.pubDate ? post.pubDate : ''}</p>
                                         <p>{post.summary.length > 200 ? post.summary.slice(0, 200) + '...' : post.summary}</p>
                                     </a>
-                                </Fade>
-                            )
-                        })
-                    }
-                </div>
-            </section>
+                                )
+                            })
+                        }
+                    </div>
+                </section>
+            </Fade>
         )
     } else {
         return null

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import BubbleChart from '@weknow/react-bubble-chart-d3';
 import { SiteIcons } from '../shared/site-icons';
+import { Fade } from 'react-reveal';
 
 const LangChart = ({ repos, blurbs }) => {
     const totalRepos = repos.nodes.length;
@@ -30,37 +31,41 @@ const LangChart = ({ repos, blurbs }) => {
 
     return (
         <div style={{ textAlign: 'center' }}>
-            <h2 style={{ marginBottom: '5px' }}>My 8 Most Used Languages</h2>
-            <div style={{ fontStyle: 'italic', fontSize: '14px', marginBottom: '15px' }}>
-                According to my GitHub&nbsp;
-                <div className='tooltip' style={{ display: 'inline' }}>
-                    <span className='tooltiptext tooltiptop'>{`Queried ${totalRepos} repositories`}</span>
-                    <SiteIcons.FaInfoCircle />
+            <Fade bottom delay={750}>
+                <h2 style={{ marginBottom: '5px' }}>My 8 Most Used Languages</h2>
+                <div style={{ fontStyle: 'italic', fontSize: '14px', marginBottom: '15px' }}>
+                    According to my GitHub&nbsp;
+                    <div className='tooltip' style={{ display: 'inline' }}>
+                        <span className='tooltiptext tooltiptop'>{`Queried ${totalRepos} repositories`}</span>
+                        <SiteIcons.FaInfoCircle />
+                    </div>
                 </div>
-            </div>
-            <BubbleChart
-                graph={{
-                    zoom: 1.1,
-                    offsetX: -0.08,
-                    offsetY: -0.01,
-                }}
-                width={width}
-                height={width + 50}
-                padding={0} // optional value, number that set the padding between bubbles
-                showLegend={false} // optional value, pass false to disable the legend.
-                valueFont={{
-                    size: 0,
-                    color: '#fff',
-                }}
-                labelFont={{
-                    size: 16,
-                    color: '#000',
-                    // weight: '400',
-                    strokeWidth: '1px'
-                }}
-                bubbleClickFun={langClick}
-                data={data}
-            ></BubbleChart>
+            </Fade>
+            <Fade bottom delay={1000}>
+                <BubbleChart
+                    graph={{
+                        zoom: 1.1,
+                        offsetX: -0.08,
+                        offsetY: -0.01,
+                    }}
+                    width={width}
+                    height={width + 50}
+                    padding={0} // optional value, number that set the padding between bubbles
+                    showLegend={false} // optional value, pass false to disable the legend.
+                    valueFont={{
+                        size: 0,
+                        color: '#fff',
+                    }}
+                    labelFont={{
+                        size: 16,
+                        color: '#000',
+                        // weight: '400',
+                        strokeWidth: '1px'
+                    }}
+                    bubbleClickFun={langClick}
+                    data={data}
+                ></BubbleChart>
+            </Fade>
             <p style={{ minHeight: '20px', margin: '0 20px' }}>{blurb}</p>
         </div>
     )

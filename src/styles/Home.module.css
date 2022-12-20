@@ -198,7 +198,7 @@ a:hover {
 
 /* Interests */
 .interests {
-  margin: 0 15%;
+  margin: 0 33%;
   /* border: 1px solid lightgrey;
   border-radius: 50px; */
   box-sizing: border-box;
@@ -219,13 +219,20 @@ a:hover {
   color: white;
 }
 
+.about {
+  padding: 5% 0;
+  width: 100vw;
+  background-image: linear-gradient(150deg, #003366e5 0%, #0070f3e6 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
 .blog {
-  /* padding-bottom: 0; */
   width: 100vw;
   min-height: 80vh;
   background-image: linear-gradient(150deg, #003366e5 0%, #0070f3e6 100%);
-  -webkit-clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
   /* background-color: white !important; */
   /* color: black;  */
   
@@ -241,7 +248,7 @@ a:hover {
     margin: 0 5%;
   }
 
-  .blog {
+  .blog, .about {
     -webkit-clip-path: none;
     clip-path: none;
   }
