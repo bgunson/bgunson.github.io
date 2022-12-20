@@ -1,15 +1,6 @@
 module.exports = {
     github: {
-        username: 'bgunson',
-        /** List your github repos you want to display as "projects" */
-        showcase: [
-            'onboardpi',
-            'FoodBee-App',
-            'studybuddy',
-            'learnlylog',
-            'UDeal',
-            'obd-socketio',
-        ]
+        username: 'bgunson'    
     },
 
     interests: [

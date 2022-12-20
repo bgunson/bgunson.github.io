@@ -10,7 +10,6 @@ import Interests from "../components/interests"
 import * as styles from "../styles/Home.module.css"
 
 import { graphql } from "gatsby";
-import { SiteIcons } from "../components/site-icons"
 
 // markup
 const HomePage = ({ data }) => {
@@ -23,7 +22,7 @@ const HomePage = ({ data }) => {
 
   const blogPosts = data.allFeedBlog.nodes || [{ summary: 'No posts yet, please check in the future.' }];
 
-  const repos = config.github.showcase.map(repoName => data.github.user.repositories.nodes.find(r => r.name.toLowerCase() === repoName.toLowerCase()));
+  const repos = data.github.user.pinnedItems.nodes;
 
   return (
     <Layout buildTime={lastBuild} title={title} description={description}>
@@ -55,7 +54,7 @@ const HomePage = ({ data }) => {
           <div className={styles.grid}>
             {
               repos.map((repo) => {
-                if (!repo) return;
+                if (!repo) return null;
                 const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
                 return (
                   <a key={repo.id} href={repo.url} className={styles.card}>
@@ -104,6 +103,8 @@ const HomePage = ({ data }) => {
 
 export default HomePage
 
+
+//TODO: parameterize github login user 
 export const query = graphql`
   query PageQuery {
     allSiteBuildMetadata {
@@ -150,7 +151,7 @@ export const query = graphql`
       }
     }
     github {
-      user(login: "bgunson") {
+      user(login: "bgunson") { 
         repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC) {
           nodes {
             languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
@@ -163,13 +164,30 @@ export const query = graphql`
                 size
               }
             }
-            id
-            name
-            url
-            description
+          }
+        }
+        pinnedItems(first: 6) {
+          nodes {
+            ... on GitHub_Repository {
+              id
+              name
+              url
+              description
+              languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
+                edges {
+                  node {
+                    id
+                    name
+                    color
+                  }
+                  size
+                }
+              }
+            }
           }
         }
         bio
+        bioHTML
         avatarUrl
         name
         login
