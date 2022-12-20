@@ -1,7 +1,7 @@
 let orbitals;
 let thetaM = 1;
 let thetaInterval;
-const bg = 0;
+const bg = 10;
 
 function setup(){
     var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
@@ -10,7 +10,7 @@ function setup(){
     noStroke();
     fill(204);
     orbitals=new Array();
-    let numO = int(random(3, 15));
+    let numO = int(random(5, 20));
     for(let i = 0;i < numO;i++) {
         orbitals.push(new Orbital());
     }
