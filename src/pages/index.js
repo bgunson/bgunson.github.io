@@ -126,9 +126,6 @@ export const query = graphql`
               name
               url
             }
-            github {
-              showcase
-            }
             interests {
               name
               blurb
