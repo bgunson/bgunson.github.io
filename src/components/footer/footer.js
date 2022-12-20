@@ -27,8 +27,9 @@ const Footer = ({ lastBuild, links }) => {
     return (
         <footer
             style={{
-                backgroundColor: 'black',
-                color: 'white'
+                backgroundColor: 'rgb(25, 25, 25)',
+                color: 'white',
+                border: 'none'
             }}>
 
             <div style={{ display: 'flex', flex: '1', alignItems: 'center', flexDirection: 'column', textAlign: 'center' }}>

@@ -19,10 +19,10 @@ const Projects = ({ user }) => {
                         if (!repo) return null;
                         const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
                         return (
-                            <Fade bottom duration={1000}
+                            <Fade key={repo.id} bottom duration={1000}
                                 delay={500}
                                 distance="30px">
-                                <a key={repo.id} href={repo.url} className={styles.card}>
+                                <a href={repo.url} className={styles.card}>
                                     <h2 style={{ textAlign: 'left' }}>{repo.name} &rarr;</h2>
                                     <p>
                                         {repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description}

@@ -14,6 +14,18 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-dark-mode',
+    // {
+    //   resolve: 'gatsby-plugin-manifest', // breaks canvas background
+    //   options: {
+    //     icon: 'src/images/favicon.png',
+    //     name: "Bennett Gunson",
+    //     short_name: "BGunson",
+    //     start_url: "/",
+    //     background_color: "black",
+    //     theme_color: "#a2466c",
+    //     display: "minimal-ui",
+    //   }
+    // },
     {
       resolve: 'gatsby-source-rss-feed',
       options: {
