@@ -1,6 +1,7 @@
 let orbitals;
 let thetaM = 1;
 let thetaInterval;
+const bg = 10;
 
 function setup(){
     var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
@@ -9,13 +10,16 @@ function setup(){
     noStroke();
     fill(204);
     orbitals=new Array();
-    let numO = int(random(3, 15));
+    let numO = int(random(5, 20));
     for(let i = 0;i < numO;i++) {
         orbitals.push(new Orbital());
     }
 }
 
 function mouseWheel(event) {
+    // console.log(event);
+    // bg += event.delta/50;
+    // bg = Math.abs(bg % 100);
     thetaM = 10;
     clearInterval(thetaInterval);
     thetaInterval = setInterval(() => {
@@ -30,7 +34,7 @@ function mouseWheel(event) {
 function draw(){
     translate(-width/2, -height/2);
     delay(10);
-    background(0);
+    background(bg);
     translate(width / 2, height / 2);
     pointLight(200, 200, 200, 0, 0, -100);
     pointLight(100, 100, 100, width / 2, height / 2, 100);
