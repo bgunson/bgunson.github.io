@@ -49,7 +49,7 @@ class Orbital{
     constructor(){
         this.posY = 0;
         this.minSize = random(5, 16);
-        this.maxSize=random(100, 250);
+        this.maxSize=random(50, 250);
         this.posX=this.posY=0;
         this.rad=this.maxSize;
         this.dRad=random(0.01, 0.15);
