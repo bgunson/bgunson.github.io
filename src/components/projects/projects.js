@@ -6,10 +6,10 @@ import LangIcon from './lang-icon';
 
 const Projects = ({ user }) => {
 
+    const pinnedRepos = user.repositories.nodes.filter(repo => user.pinnedItems.nodes.find(r => r.id === repo.id));
     const [selectedTopic, setSelectedTopic] = React.useState();
-    const [repos, setRepos] = React.useState(user.pinnedItems.nodes);
-
-    // const repos = user.pinnedItems.nodes;
+    const [repos, setRepos] = React.useState(pinnedRepos);
+    const [showRepos, setShowRepos] = React.useState();
 
     const topics = {};
     user.repositories.nodes.forEach(repo => {
@@ -19,15 +19,17 @@ const Projects = ({ user }) => {
     });
 
     const handleTopicClick = (id) => {
+        let show = [];
+        setShowRepos(false);
         if (!id || id === selectedTopic) {  // user cleared filter, or selected same so unset
             setSelectedTopic(null);
-            setRepos(user.pinnedItems.nodes);
+            show = pinnedRepos;
         } else {
-            setRepos([]);
             setSelectedTopic(id);
-            const topicRepos = user.repositories.nodes.filter(repo => repo.repositoryTopics.nodes.find(t => t.topic.id === id));
-            setRepos(topicRepos);
+            show = user.repositories.nodes.filter(repo => repo.repositoryTopics.nodes.find(t => t.topic.id === id));
         }
+        setRepos(show);
+        setTimeout(() => setShowRepos(true), 500);
     }
 
     const activeTopicStyle = {
@@ -39,49 +41,54 @@ const Projects = ({ user }) => {
 
     return (
         <section className={styles.projects}>
-            <h2>Topics I've Explored</h2>
-            <div className={styles.interests} style={{ margin: '0 10%', marginBottom: '5%' }}>
-                {
-                    Object.entries(topics).map(([id, name]) => {
-                        const activeStyle = selectedTopic === id ? activeTopicStyle : null;
-                        return (
-                            <Fade key={id} slide bottom>
-                                <span className={styles.topic} style={activeStyle} onClick={() => handleTopicClick(id)}>
+            <Fade top>
+                <h2>Topics I've Explored</h2>
+            </Fade>
+            <Fade bottom cascade>
+                <div className={styles.interests} style={{ margin: '0 10%', marginBottom: '5%' }}>
+                    {
+                        Object.entries(topics).map(([id, name]) => {
+                            const activeStyle = selectedTopic === id ? activeTopicStyle : null;
+                            return (
+
+                                <span key={id} role="button" tabIndex={-1} className={styles.topic} style={activeStyle} onClick={() => handleTopicClick(id)} onKeyDown={() => this.handleTopicClick(id)}>
                                     {name}
                                 </span>
-                            </Fade>
-                        )
-                    })
-                }
-            </div>
-            <div className={styles.inline}>
-                <h2>
-                    {
-                        selectedTopic ?
-                        <span>{ topics[selectedTopic] } projects</span>
-                        :
-                        <span>Projects</span>
-                    }
-                </h2>
-                <div>
-                    {
-                        selectedTopic ?
-                            <span className={styles.clearfilter} onClick={() => handleTopicClick(null)}><SiteIcons.MdCancel size={24} style={{verticalAlign: 'middle'}}/> Clear filter</span>
-                            :
-                            <a href={`https://github.com/${user.login}?tab=repositories`}>See All &rarr;</a>
+
+                            )
+                        })
                     }
                 </div>
-            </div>
-            <div className={styles.grid}>
-                {
-                    repos.map((repo) => {
-                        if (!repo) return null;
-                        const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
-                        return (
-                            <Fade key={repo.id} left collapse duration={1000}
-                                delay={500}
-                                distance="30px">
-                                <a href={repo.url} className={styles.card}>
+            </Fade>
+            <Fade left>
+                <div className={styles.inline}>
+                    <h2>
+                        {
+                            selectedTopic ?
+                                <span>{topics[selectedTopic]} projects</span>
+                                :
+                                <span>Projects</span>
+                        }
+                    </h2>
+                    <div>
+                        {
+                            selectedTopic ?
+                                <span role="button" tabIndex={-1} className={styles.clearfilter} onClick={() => handleTopicClick(null)} onKeyDown={() => this.handleTopicClick(null)}><SiteIcons.MdCancel size={24} style={{ verticalAlign: 'middle' }} /> Clear filter</span>
+                                :
+                                <a href={`https://github.com/${user.login}?tab=repositories`}>See All &rarr;</a>
+                        }
+                    </div>
+                </div>
+            </Fade>
+            <Fade left opposite cascade when={showRepos} duration={500}>
+                <div className={styles.grid}>
+                    {
+                        repos.map((repo) => {
+                            if (!repo) return null;
+                            const total = repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
+                            return (
+
+                                <a key={repo.id} href={repo.url} className={styles.card}>
                                     <h2 style={{ textAlign: 'left' }}>{repo.name} &rarr;</h2>
                                     <p>
                                         {repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description}
@@ -100,16 +107,13 @@ const Projects = ({ user }) => {
                                         }
                                     </div>
                                 </a>
-                            </Fade>
+
+                            )
+                        }
                         )
                     }
-                    )
-                }
-
-                {/* <a href={`https://github.com/${user.login}?tab=repositories`} className={styles.card}>
-              <h2 style={{ textAlign: 'left' }}>See All &rarr;</h2>
-            </a> */}
-            </div>
+                </div>
+            </Fade>
         </section>
     )
 
