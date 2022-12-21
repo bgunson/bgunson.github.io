@@ -7,8 +7,9 @@ const Blog = ({ props }) => {
     if (props.config.enable) {
 
         return (
-            // <Fade slide right>
-                <section id="blog" className={styles.blog}>
+
+            <section id="blog" className={styles.blog}>
+                <Fade slide bottom>
                     <h2>Recent Blog Posts</h2>
                     <div className={styles.grid}>
                         {
@@ -23,8 +24,9 @@ const Blog = ({ props }) => {
                             })
                         }
                     </div>
-                </section>
-            // </Fade>
+                </Fade>
+
+            </section >
         )
     } else {
         return null

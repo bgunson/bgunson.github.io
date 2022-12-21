@@ -37,16 +37,13 @@ const Footer = ({ lastBuild, links }) => {
 
                 <Link to="header" smooth duration={1000}><SiteIcons.FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }}/></Link>
 
-                <div style={{ display: 'flex' }}>
+                <div style={{ display: 'flex', marginBottom: '20px' }}>
 
                     {
                         links.map(link => <a key={link.name} href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
                     }
 
                 </div>
-
-                <a href="bennettgunson_resume.pdf" className={styles.linkbtn}><SiteIcons.FaFile /> View résumé</a>
-
 
                 <div style={{color: 'grey'}}>
                     <SiteIcons.FaTree />&nbsp;<SiteIcons.FaCampground />&nbsp;<SiteIcons.FaBeer />&nbsp;<SiteIcons.FaFish />&nbsp;Bennett Gunson&nbsp;<SiteIcons.FaBiking />&nbsp;<SiteIcons.FaMountain />&nbsp;<SiteIcons.FaCar />&nbsp;<SiteIcons.FaLaptopCode />
