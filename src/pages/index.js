@@ -83,6 +83,20 @@ export const query = graphql`
       user(login: "bgunson") { 
         repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC) {
           nodes {
+            id
+            name
+            url
+            description
+            languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
+              edges {
+                node {
+                  id
+                  name
+                  color
+                }
+                size
+              }
+            }
             repositoryTopics(first: 10) {
               nodes {
                 topic {

@@ -13,6 +13,7 @@ export default function HTML(props) {
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
         <script src="sketch.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

@@ -43,10 +43,12 @@ import {
     SiRuby,
     SiDart,
     SiKotlin,
-    SiThingiverse
+    SiThingiverse,
+    SiCplusplus,
+    SiCmake
 } from 'react-icons/si'
 
-import { MdOutlineDateRange } from 'react-icons/md'
+import { MdOutlineDateRange, MdCancel, MdOutlineCancel } from 'react-icons/md'
 
 export const SiteIcons = {
     SiPypi,
@@ -57,6 +59,8 @@ export const SiteIcons = {
     SiDart,
     SiKotlin,
     SiThingiverse,
+    SiCplusplus,
+    SiCmake,
 
     FaTree,
     FaDocker,
@@ -83,4 +87,6 @@ export const SiteIcons = {
     FaAngleUp,
 
     MdOutlineDateRange,
+    MdCancel,
+    MdOutlineCancel
 }

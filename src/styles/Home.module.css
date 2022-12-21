@@ -127,9 +127,13 @@ a:hover {
   max-width: 1200px;
 }
 
+.clearfilter:hover {
+  cursor: pointer;
+  color: orange;
+}
+
 .inline {
   align-items: center;
-  justify-content: center;
   line-height: 6px;
   padding: 0;
   margin: 0px 9%;
@@ -138,9 +142,10 @@ a:hover {
 }
 
 .topic {
-  background-color: rgb(33, 33, 33);
+  /* background-color: rgb(33, 33, 33); */
+  background-color: #051527;
   color: #1a74dc;
-  padding: 0px 12px;
+  padding: 0px 12px !important;
   margin: 2px;
   border-radius: 25px;
   font-weight: 600;
@@ -287,6 +292,11 @@ a:hover {
 
   .interests {
     margin: 0 5%;
+  }
+
+  .inline {
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   /* .blog,
