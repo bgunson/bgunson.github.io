@@ -4,13 +4,13 @@ let thetaInterval;
 const bg = 10;
 
 function setup(){
-    var canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
+    var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
     canvas.parent("sketch");
     translate(-width/2, -height/2);
     noStroke();
     fill(204);
     orbitals=new Array();
-    let numO = int(random(5, 20));
+    let numO = int(random(5, 16));
     for(let i = 0;i < numO;i++) {
         orbitals.push(new Orbital());
     }
