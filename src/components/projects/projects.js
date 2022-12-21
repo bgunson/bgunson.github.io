@@ -45,7 +45,7 @@ const Projects = ({ user }) => {
                 <h2>Topics I've Explored</h2>
             </Fade>
             <Fade bottom cascade>
-                <div className={styles.interests} style={{ margin: '0 10%', marginBottom: '5%' }}>
+                <div className={styles.interests} style={{ margin: '0 10%', marginBottom: '8%' }}>
                     {
                         Object.entries(topics).map(([id, name]) => {
                             const activeStyle = selectedTopic === id ? activeTopicStyle : null;
