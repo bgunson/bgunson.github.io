@@ -132,9 +132,25 @@ a:hover {
   justify-content: center;
   line-height: 6px;
   padding: 0;
-  margin: 0px 8%;
+  margin: 0px 9%;
   display: flex;
   justify-content: space-between;
+}
+
+.topic {
+  background-color: rgb(33, 33, 33);
+  color: #1a74dc;
+  padding: 0px 12px;
+  margin: 2px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all ease 0.25s;
+}
+
+.topic:hover {
+  cursor: pointer;
+  background-color: #1a74dc;
+  color: white;
 }
 
 .linkbtn {

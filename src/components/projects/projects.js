@@ -4,9 +4,30 @@ import * as styles from '../../styles/Home.module.css';
 import LangIcon from './lang-icon';
 
 const Projects = ({ user }) => {
+    
     const repos = user.pinnedItems.nodes;
+    const topics = {};
+    user.repositories.nodes.forEach(repo => {
+        repo.repositoryTopics.nodes.forEach(t => {
+            topics[t.topic.id] = t.topic.name;
+        });
+    });
+
+
     return (
         <section className={styles.projects}>
+            <h2>Topics I've Explored</h2>
+            <div className={styles.interests} style={{ margin: '0 10%', marginBottom: '5%'}}>
+                {
+                    Object.values(topics).map(t => {
+                        return (
+                            <span className={styles.topic}>
+                                {t}
+                            </span>
+                        )
+                    })
+                }
+            </div>
             <div className={styles.inline}>
                 <h2>
                     Projects
