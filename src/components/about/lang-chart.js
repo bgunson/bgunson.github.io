@@ -22,7 +22,7 @@ const LangChart = ({ repos, blurbs }) => {
     })
 
     const data = Object.values(allLanguagesData).sort((a, b) => b.value - a.value).slice(0, 8)
-    data.forEach(language => language.color += 'e6')
+    // data.forEach(language => language.color += 'e6')
 
     const [blurb, setBlurb] = useState('')
     const langClick = (label) => setBlurb(blurbs.find(blurb => blurb.name === label.toLowerCase()).blurb || '')
