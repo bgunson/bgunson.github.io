@@ -34,7 +34,7 @@ h2 {
 
 section {
   padding: 10% 0;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex: 1;
   flex-direction: column;
