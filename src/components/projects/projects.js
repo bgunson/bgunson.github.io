@@ -33,7 +33,8 @@ const Projects = ({ user, config }) => {
             setShowRepos(false);
             setFilter(f);
             if (f.type === 'language') {
-                show = user.repositories.nodes.filter(repo => repo.primaryLanguage.name.toLowerCase() === f.value.toLowerCase())
+                show = user.repositories.nodes.filter(repo => repo.languages.edges.map(e => e.node.name.toLowerCase()).includes(f.value.toLowerCase()));
+                show = show.slice(0, 6);
             } else if (f.type === 'topic') {
                 show = user.repositories.nodes.filter(repo => repo.repositoryTopics.nodes.find(t => t.topic.id === f.value));
             } else {
@@ -41,7 +42,10 @@ const Projects = ({ user, config }) => {
             }
         }
         setRepos(show);
-        setTimeout(() => setShowRepos(true), 500);
+        setTimeout(() => {
+            setShowRepos(true);
+            document.querySelector("#projects").scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 500);
     }
 
     const activeTopicStyle = {
@@ -79,7 +83,7 @@ const Projects = ({ user, config }) => {
                     </div>
                 </Fade>
             </div>
-            <div className={styles.projects}>
+            <div id="projects" className={styles.projects}>
                 <Fade left opposite cascade when={showRepos} duration={500}>
                     <div className={styles.inline}>
                         <h2>
