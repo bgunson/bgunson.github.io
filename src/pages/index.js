@@ -121,19 +121,6 @@ export const query = graphql`
           nodes {
             ... on GitHub_Repository {
               id
-              name
-              url
-              description
-              languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
-                edges {
-                  node {
-                    id
-                    name
-                    color
-                  }
-                  size
-                }
-              }
             }
           }
         }

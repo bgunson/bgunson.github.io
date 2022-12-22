@@ -6,7 +6,8 @@ import LangIcon from './lang-icon';
 
 const Projects = ({ user }) => {
 
-    const pinnedRepos = user.repositories.nodes.filter(repo => user.pinnedItems.nodes.find(r => r.id === repo.id));
+    const pinnedRepos = user.pinnedItems.nodes.map(item => user.repositories.nodes.find(r => r.id === item.id));
+
     const [selectedTopic, setSelectedTopic] = React.useState();
     const [repos, setRepos] = React.useState(pinnedRepos);
     const [showRepos, setShowRepos] = React.useState();

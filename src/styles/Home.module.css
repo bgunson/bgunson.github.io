@@ -184,7 +184,7 @@ a:hover {
 }
 
 .card {
-  height: 250px;
+  height: 275px;
   width: 320px;
   max-width: 320px;
   margin: 1rem;
@@ -278,7 +278,7 @@ a:hover {
   clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%); */
 
 
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='600' preserveAspectRatio='none' viewBox='0 0 1440 600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1114%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c197 C 96%2c238.2 288%2c416.8 480%2c403 C 672%2c389.2 768%2c141.6 960%2c128 C 1152%2c114.4 1344%2c293.6 1440%2c335L1440 600L0 600z' fill='rgba(0%2c 51%2c 102%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c574 C 96%2c507.2 288%2c266.4 480%2c240 C 672%2c213.6 768%2c442 960%2c442 C 1152%2c442 1344%2c280.4 1440%2c240L1440 600L0 600z' fill='rgba(0%2c 112%2c 243%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1114'%3e%3crect width='1440' height='600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='600' preserveAspectRatio='none' viewBox='0 0 1440 600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1114%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c197 C 96%2c238.2 288%2c416.8 480%2c403 C 672%2c389.2 768%2c141.6 960%2c128 C 1152%2c114.4 1344%2c293.6 1440%2c335L1440 600L0 600z' fill='rgba(0%2c 51%2c 102%2c 0.9)'%3e%3c/path%3e%3cpath d='M 0%2c574 C 96%2c507.2 288%2c266.4 480%2c240 C 672%2c213.6 768%2c442 960%2c442 C 1152%2c442 1344%2c280.4 1440%2c240L1440 600L0 600z' fill='rgba(0%2c 112%2c 243%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1114'%3e%3crect width='1440' height='600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
   background-position: top center;
   background-size: cover;
   background-position: top;
