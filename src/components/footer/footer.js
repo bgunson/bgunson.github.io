@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-scroll';
 import { SiteIcons } from '../shared/site-icons';
-import * as styles from '../../styles/Home.module.css';
 
 const iconSize = 36;
 

@@ -16,6 +16,10 @@ module.exports = {
         { name: 'Travel', blurb: 'I am lucky to have been able to see over a dozen different countries and cultures' }
     ],
 
+    toolkit: [
+
+    ],
+
     languages: [
         { name: 'python', blurb: `Python was the first programming language I learned` },
         { name: 'java', blurb: `Java taught me Object-oriented programming and is one of my favourites` },

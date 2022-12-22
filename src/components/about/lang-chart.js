@@ -3,6 +3,7 @@ import { useState } from 'react'
 import BubbleChart from '@weknow/react-bubble-chart-d3';
 import { SiteIcons } from '../shared/site-icons';
 import { Fade } from 'react-reveal';
+import { navigate } from 'gatsby';
 
 const LangChart = ({ repos, blurbs }) => {
     const totalRepos = repos.nodes.length;
@@ -25,7 +26,10 @@ const LangChart = ({ repos, blurbs }) => {
     // data.forEach(language => language.color += 'e6')
 
     const [blurb, setBlurb] = useState('')
-    const langClick = (label) => setBlurb(blurbs.find(blurb => blurb.name === label.toLowerCase()).blurb || '')
+    const langClick = (lang) => {
+        navigate(`/#projects?lang=${lang.toLowerCase()}`);
+        document.querySelector("#projects").scrollIntoView({ behavior: 'smooth' });
+    }
 
     var width = 350;
 
@@ -62,7 +66,7 @@ const LangChart = ({ repos, blurbs }) => {
                         // weight: '400',
                         strokeWidth: '1px'
                     }}
-                    bubbleClickFun={langClick}
+                    bubbleClickFun={(e) => langClick(e)}
                     data={data}
                 ></BubbleChart>
             </Fade>

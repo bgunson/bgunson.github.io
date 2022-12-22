@@ -25,7 +25,7 @@ const HomePage = ({ data }) => {
       <Header user={user}/>
       <main className={styles.container}>
         <About config={config} user={user}/>
-        <Projects user={user}/>
+        <Projects user={user} config={config}/>
         <Blog props={{ config: config.blog, posts: blogPosts }}/>
       </main>
       <Footer lastBuild={data.allSiteBuildMetadata.nodes[0].buildTime} links={config.links}/>
@@ -87,6 +87,10 @@ export const query = graphql`
             name
             url
             description
+            primaryLanguage {
+              name
+              id
+            }
             languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
               edges {
                 node {

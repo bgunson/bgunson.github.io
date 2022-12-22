@@ -9,7 +9,7 @@ const About = ({ config, user }) => {
     return (
         <section id="about" className={styles.about}>
             <Interests interests={config.interests} />
-            <LangChart repos={user.repositories} blurbs={config.languages} />
+            {/* <LangChart repos={user.repositories} blurbs={config.languages} /> */}
             <Fade slide bottom>
                 <a href="bennettgunson_resume.pdf" className={styles.linkbtn} style={{ width: '180px', alignSelf: 'center', textAlign: 'center'}}><SiteIcons.FaFile style={{ verticalAlign: 'middle'}}/>&nbsp;&nbsp;Resume</a>
             </Fade>

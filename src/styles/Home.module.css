@@ -114,6 +114,21 @@ a:hover {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
+/* 
+.skills {
+  flex: 1;
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15%;
+} */
+
+.topics {
+  width: 375px;
+  min-width: 375px;
+  align-self: flex-start;
+}
 
 .grid {
   display: flex;
@@ -282,6 +297,16 @@ a:hover {
   background-position: top center;
   background-size: cover;
   background-position: top;
+}
+
+@media screen and (max-width: 750px) {
+  /* .skills {
+    flex-direction: column;
+  } */
+  .topics {
+    width: 100%;
+    align-self: center;
+  }
 }
 
 @media screen and (max-width: 600px) {
