@@ -1,9 +1,6 @@
 import * as React from 'react'
-import { useState } from 'react'
 import BubbleChart from '@weknow/react-bubble-chart-d3';
-import { SiteIcons } from '../shared/site-icons';
-import { Fade } from 'react-reveal';
-import { navigate } from 'gatsby';
+
 
 const LangChart = ({ repos, blurbs, onSelect }) => {
     const allLanguagesData = {};
@@ -21,12 +18,7 @@ const LangChart = ({ repos, blurbs, onSelect }) => {
 
     const data = Object.values(allLanguagesData).sort((a, b) => b.value - a.value).slice(0, 8)
     // data.forEach(language => language.color += 'e6')
-
-    const [blurb, setBlurb] = useState('')
-    const langClick = (lang) => {
-        onSelect(lang);
-    }
-
+    
     var width = 350;
 
     return (
@@ -52,7 +44,7 @@ const LangChart = ({ repos, blurbs, onSelect }) => {
                     // weight: '400',
                     strokeWidth: '1px'
                 }}
-                bubbleClickFun={(e) => langClick(e)}
+                bubbleClickFun={(e) => onSelect(e)}
                 data={data}
             ></BubbleChart>
             {/* <p style={{ minHeight: '20px', margin: '0 20px' }}>{blurb}</p> */}

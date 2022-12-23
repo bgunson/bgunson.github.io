@@ -37,7 +37,7 @@ function draw(){
     translate(-width/2, -height/2);
     background(bg);
     translate(width / 2, height / 2);
-    pointLight(255, 183, 77, 0, 0, -100);
+    pointLight(200, 135, 25, 0, 0, -100);
     pointLight(100, 100, 100, width / 2, height / 2, 100);
     for (let P2JSi = 0; P2JSi < orbitals.length; P2JSi++){
         let o = orbitals[P2JSi];

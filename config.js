@@ -17,7 +17,36 @@ module.exports = {
     ],
 
     toolkit: [
-
+        // names via https://devicon.dev/
+        'raspberrypi',
+        'arduino',
+        'nodejs',
+        'npm',
+        'git',
+        'github',
+        'vscode',
+        'linux',
+        'docker',
+        'dotnetcore',   //busted
+        'angularjs',
+        'express',
+        'react',
+        'gatsby',
+        'nextjs',
+        'bootstrap',
+        'materialui',   //busted
+        'figma',
+        'gimp',
+        'latex',
+        'socketio',
+        'jquery',
+        'googlecloud',
+        'heroku',
+        'firebase',
+        'mongodb',
+        'graphql',
+        'postgresql',
+        'sqlite'
     ],
 
     languages: [

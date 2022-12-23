@@ -39,6 +39,7 @@ section {
   flex: 1;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 canvas {
@@ -151,10 +152,17 @@ a:hover {
   align-items: center;
   line-height: 6px;
   padding: 0;
-  margin: 0px 9%;
+  margin: 0px 5%;
   display: flex;
   justify-content: space-between;
 }
+
+/* .tool:hover > img {
+  visibility: hidden;
+} */
+/* .tool:hover > i {
+  visibility:hidden;
+} */
 
 .topic {
   /* background-color: rgb(33, 33, 33); */
@@ -166,6 +174,7 @@ a:hover {
   font-weight: 600;
   transition: all ease 0.25s;
 }
+
 
 .topic:hover {
   cursor: pointer;
@@ -245,6 +254,73 @@ a:hover {
   margin-left: 0.5rem;
 }
 
+.toolkit {
+  display: flex;
+  --s: 80px;  /* size  */
+  --m: 6px;   /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px); 
+}
+
+.tools:hover .tool:not(:hover) {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+
+.tools {
+  /* margin: 0 30%; */
+  margin-left: 30.5%;
+  margin-right: 29%;
+}
+
+.tools::before {
+  content: "";
+  width: calc(var(--s) / 1.7 + var(--m));
+  float: left;
+  height: 120%; 
+  shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
+}
+
+.toolicon {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.5s;
+}
+
+.tool {
+  width: calc(var(--s) * 1.1547);
+  margin: var(--m);
+  height: calc(var(--s) * 1.1547);
+  display: inline-block;
+  /* clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%); */
+  background-color: white;
+  border-radius: 50%;
+  margin-bottom: calc(var(--m) - var(--s) * 0.2886); /* some negative margin to create overlap */
+  cursor: pointer;
+  font-size: 300%;
+  background-color: #ffffff;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  transition: all ease 0.4s;
+}
+
+.tool:hover {
+  /* width: calc(var(--s) * 1.5);
+  height: calc(var(--s) * 1.5); */
+}
+
+.tool:hover .toolicon {
+  transform: scale(125%);
+}
 
 /* Interests */
 .interests {
@@ -299,6 +375,15 @@ a:hover {
   background-position: top;
 }
 
+
+@media screen and (max-width: 1100px) {
+  .tools {
+    margin-left: 20%;
+    margin-right: 18%;
+  }
+  
+}
+
 @media screen and (max-width: 750px) {
   /* .skills {
     flex-direction: column;
@@ -306,6 +391,11 @@ a:hover {
   .topics {
     width: 100%;
     align-self: center;
+  }
+
+  .tools {
+    margin-left: 4%;
+    margin-right: 1%;
   }
 }
 
@@ -326,6 +416,10 @@ a:hover {
 
   section {
     padding: 20% 0;
+  }
+
+  .toolkit {
+    background-image: none;
   }
 
   /* .blog,

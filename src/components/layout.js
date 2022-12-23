@@ -12,9 +12,7 @@ export default function Layout(props) {
                 <title>{title}</title>
                 <meta name="description" content={description} />
             </Helmet>
-            <main>
-                {children}
-            </main>
+            {children}
         </div>
     )
 }

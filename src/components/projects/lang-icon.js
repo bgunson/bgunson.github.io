@@ -85,5 +85,4 @@ const LangIcon = (props) => {
 
 }
 
-
 export default LangIcon

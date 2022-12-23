@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Interests from './interests';
-import LangChart from './lang-chart';
 import { SiteIcons } from '../shared/site-icons';
 import * as styles from '../../styles/Home.module.css'
 import { Fade } from 'react-reveal';

@@ -24,7 +24,7 @@ const HomePage = ({ data }) => {
     <Layout title={title} description={description}>
       <Header user={user}/>
       <main className={styles.container}>
-        <About config={config} user={user}/>
+        {/* <About config={config} user={user}/> */}
         <Projects user={user} config={config}/>
         <Blog props={{ config: config.blog, posts: blogPosts }}/>
       </main>
@@ -66,6 +66,7 @@ export const query = graphql`
               name
               blurb
             }
+            toolkit
           }
         }
       }
@@ -81,16 +82,12 @@ export const query = graphql`
     }
     github {
       user(login: "bgunson") { 
-        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC) {
+        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC, ownerAffiliations: OWNER) {
           nodes {
             id
             name
             url
             description
-            primaryLanguage {
-              name
-              id
-            }
             languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
               edges {
                 node {
@@ -107,16 +104,6 @@ export const query = graphql`
                   id
                   name
                 }
-              }
-            }
-            languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
-              edges {
-                node {
-                  id
-                  name
-                  color
-                }
-                size
               }
             }
           }
