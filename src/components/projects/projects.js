@@ -8,8 +8,7 @@ import LangIcon from './lang-icon';
 import ToolkitIcon from './toollkit-icon';
 
 const Projects = ({ user, config }) => {
-    console.log(config);
-
+    
     const pinnedRepos = user.pinnedItems.nodes.map(item => user.repositories.nodes.find(r => r.id === item.id));
 
     const [filter, setFilter] = React.useState();

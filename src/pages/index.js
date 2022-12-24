@@ -24,7 +24,7 @@ const HomePage = ({ data }) => {
     <Layout title={title} description={description}>
       <Header user={user}/>
       <main className={styles.container}>
-        {/* <About config={config} user={user}/> */}
+        <About config={config} user={user}/>
         <Projects user={user} config={config}/>
         <Blog props={{ config: config.blog, posts: blogPosts }}/>
       </main>
