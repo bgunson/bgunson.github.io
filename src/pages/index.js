@@ -50,6 +50,10 @@ export const query = graphql`
           title
           description
           config {
+            info {
+              resumeURL
+              github
+            }
             blog {
               enable
               feedURL
@@ -58,15 +62,16 @@ export const query = graphql`
               name
               url
             }
-            interests {
-              name
-              blurb
-            }
             languages {
               name
               blurb
             }
             toolkit
+            about {
+              name
+              image
+              blurb
+            }
           }
         }
       }

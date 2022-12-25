@@ -11,7 +11,6 @@ module.exports = {
     config: config
   },
   plugins: [
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest', // breaks canvas background

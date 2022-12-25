@@ -1,19 +1,21 @@
 module.exports = {
+    
+    info: {
+        github: 'bgunson',
+        resumeURL: 'bennettgunson_resume.pdf'
+    },
+
     github: {
         username: 'bgunson'    
     },
 
-    interests: [
-        { name: 'DIY', blurb: 'I fix whatever I can myself because it saves time and money!' },
-        { name: 'Computer Networks' },
-        { name: 'Web Applications', blurb: 'I believe that web is optimal for building cross-platform and user-friendly applications' },
-        { name: 'Mountain Biking' },
-        { name: 'Fly Fishing', blurb: 'I am on the river most weekends in the summer' },
-        { name: 'Car Maintenance', blurb: 'I will tinker and repair my car whenever I get the chance' },
-        { name: 'Camping' },
-        { name: 'IoT', blurb: 'Currently learning and implementing the MQTT protocol' },
-        { name: 'UI Design', blurb: 'I love to use my creative side when designing user interfaces' },
-        { name: 'Travel', blurb: 'I am lucky to have been able to see over a dozen different countries and cultures' }
+    about: [
+        { name: 'whoami', image: 'https://avatars.githubusercontent.com/u/47361247?u=26e002603f0e83a74e77f5372b020da8e5fb4537&v=4', blurb: 'I am student and developer based in Calgary, Alberta who creates useful pieces of software primarily on the web. I enjoy the outdoors as much as I do programming so my life consists of a balance between screen time and play time.' },
+        { name: 'Fly Fisherman', image: 'images/fly_fishing.png', blurb: 'My passion is fly fishing. In the summer you can find me and my fishing buddies on the river having a good time.' },
+        { name: 'Mountain Biker', image: 'images/mtb.png', blurb: 'Mountain biking fulfils my need for the extreme. I also enjoy tuning and repairing bicycles.' },
+        { name: 'Outdoorsman', image: 'images/outdoors.jpg', blurb: 'Whether it\'s camping, hiking, or backpacking if I can be outside I will be. I have a deep appreciation for nature and everything it has to offer.' },
+        { name: 'DIYer', image: 'images/diy.jpg', blurb: 'I fix whatever I can myself because it saves time and money! From DIY car maintenance and modifications, I like to tackle any project small or large.' },
+        { name: 'Traveller', image: 'images/travel.jpg', blurb: 'I am lucky to have been able to see over a dozen different and unique countries and cultures throughout the world and still want to see more!' },
     ],
 
     toolkit: [
@@ -27,21 +29,18 @@ module.exports = {
         'vscode',
         'linux',
         'docker',
-        'dotnetcore',   //busted
+        'dotnetcore',   
         'angularjs',
         'express',
         'react',
         'gatsby',
         'nextjs',
         'bootstrap',
-        'materialui',   //busted
+        'materialui',   
         'figma',
         'gimp',
         'latex',
         'socketio',
-        'jquery',
-        'googlecloud',
-        'heroku',
         'firebase',
         'mongodb',
         'graphql',
