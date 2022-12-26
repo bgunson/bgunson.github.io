@@ -52,7 +52,6 @@ export const query = graphql`
           config {
             info {
               resumeURL
-              github
             }
             blog {
               enable

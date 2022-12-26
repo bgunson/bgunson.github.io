@@ -1,23 +1,39 @@
 import * as React from 'react';
 import { Link } from 'react-scroll';
-import { SiteIcons } from '../shared/site-icons';
+import {
+    FaGithub,
+    FaDocker,
+    FaEnvelope,
+    FaBlog,
+    FaLinkedin,
+    FaAngleUp,
+    FaTree,
+    FaCampground,
+    FaBeer,
+    FaFish,
+    FaBiking,
+    FaMountain,
+    FaCar,
+    FaLaptopCode
+} from 'react-icons/fa';
+import {SiThingiverse} from 'react-icons/si';
 
 const iconSize = 36;
 
 const getLinkIcon = (name) => {
 
     if (name.toLowerCase() === 'github') {
-        return <SiteIcons.FaGithub size={iconSize} />
+        return <FaGithub size={iconSize} />
     } else if (name.toLowerCase() === 'docker') {
-        return <SiteIcons.FaDocker size={iconSize} />
+        return <FaDocker size={iconSize} />
     } else if (name.toLowerCase() === 'email') {
-        return <SiteIcons.FaEnvelope size={iconSize} />
+        return <FaEnvelope size={iconSize} />
     } else if (name.toLowerCase() === 'blog') {
-        return <SiteIcons.FaBlog size={iconSize} />
+        return <FaBlog size={iconSize} />
     } else if (name.toLowerCase() === 'thingiverse') {
-        return <SiteIcons.SiThingiverse size={iconSize} />
+        return <SiThingiverse size={iconSize} />
     } else if (name.toLowerCase() === 'linkedin') {
-        return <SiteIcons.FaLinkedin size={iconSize} />
+        return <FaLinkedin size={iconSize} />
     }
 
 }
@@ -34,7 +50,7 @@ const Footer = ({ lastBuild, links }) => {
 
             <div style={{ display: 'flex', flex: '1', alignItems: 'center', flexDirection: 'column', textAlign: 'center' }}>
 
-                <Link to="header" smooth duration={1000}><SiteIcons.FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }}/></Link>
+                <Link to="header" smooth duration={1000}><FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }}/></Link>
 
                 <div style={{ display: 'flex', marginBottom: '20px' }}>
 
@@ -45,7 +61,7 @@ const Footer = ({ lastBuild, links }) => {
                 </div>
 
                 <div style={{color: 'grey'}}>
-                    <SiteIcons.FaTree />&nbsp;<SiteIcons.FaCampground />&nbsp;<SiteIcons.FaBeer />&nbsp;<SiteIcons.FaFish />&nbsp;Bennett Gunson&nbsp;<SiteIcons.FaBiking />&nbsp;<SiteIcons.FaMountain />&nbsp;<SiteIcons.FaCar />&nbsp;<SiteIcons.FaLaptopCode />
+                    <FaTree />&nbsp;<FaCampground />&nbsp;<FaBeer />&nbsp;<FaFish />&nbsp;Bennett Gunson&nbsp;<FaBiking />&nbsp;<FaMountain />&nbsp;<FaCar />&nbsp;<FaLaptopCode />
                     <br />
                     <small>Last Build: {`${new Date(lastBuild).toDateString()}, ${new Date(lastBuild).toLocaleTimeString()}`}</small>
                 </div>

@@ -1,8 +1,7 @@
 import * as React from 'react';
+import { MdCancel } from 'react-icons/md';
 import { Fade } from 'react-reveal';
 import * as styles from '../../styles/Home.module.css';
-import { SiteIcons } from '../shared/site-icons';
-import DeviconImage from './devicon-img';
 import LangChart from './lang-chart';
 import LangIcon from './lang-icon';
 import ToolkitIcon from './toollkit-icon';
@@ -111,7 +110,7 @@ const Projects = ({ user, config }) => {
                         <div>
                             {
                                 filter ?
-                                    <span role="button" tabIndex={-1} className={styles.clearfilter} onClick={() => handleFilterClick(null)} onKeyDown={() => handleFilterClick(null)}><SiteIcons.MdCancel size={24} style={{ verticalAlign: 'middle' }} /> Clear filter</span>
+                                    <span role="button" tabIndex={-1} className={styles.clearfilter} onClick={() => handleFilterClick(null)} onKeyDown={() => handleFilterClick(null)}><MdCancel size={24} style={{ verticalAlign: 'middle' }} /> Clear filter</span>
                                     :
                                     <a href={`https://github.com/${user.login}?tab=repositories`}>See All &rarr;</a>
                             }

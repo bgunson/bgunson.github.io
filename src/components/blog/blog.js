@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { SiteIcons } from '../shared/site-icons'
 import * as styles from '../../styles/Home.module.css'
 import { Fade } from 'react-reveal'
+import { MdOutlineDateRange } from 'react-icons/md';
 
 const Blog = ({ props }) => {
     if (props.config.enable) {
@@ -17,7 +17,7 @@ const Blog = ({ props }) => {
                                 return (
                                     <a key={post.id} href={post.link} className={styles.blogcard}>
                                         <h3>{post.title}</h3>
-                                        <p><SiteIcons.MdOutlineDateRange /> {post.pubDate ? post.pubDate : ''}</p>
+                                        <p><MdOutlineDateRange /> {post.pubDate ? post.pubDate : ''}</p>
                                         <p>{post.summary.length > 200 ? post.summary.slice(0, 200) + '...' : post.summary}</p>
                                     </a>
                                 )

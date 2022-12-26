@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { SiteIcons } from '../shared/site-icons';
 import * as styles from '../../styles/Home.module.css'
-import { Flip, Fade } from 'react-reveal';
+import { Flip } from 'react-reveal';
+import { FaFile } from 'react-icons/fa';
 
 const About = ({ config, user }) => {
 
@@ -18,10 +18,9 @@ const About = ({ config, user }) => {
 
     return (
         <section id="about" className={styles.about}>
-            {/* <h2>About</h2> */}
             <div className={styles.grid} style={{ gap: '50px' }}>
                 <div className={styles.aboutpics}>
-                    <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.5}deg)` }}>
+                    <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
                         <Flip right opposite when={show}>
                             <div className={styles.aboutpic} >
                                 <div className={styles.aboutbg} style={{ backgroundImage: `url(${about[aboutIndex].image})` }}></div>
@@ -33,8 +32,8 @@ const About = ({ config, user }) => {
                     <div className={styles.aboutpicselect}>
                         {
                             about.map((item, index) => {
-                                const activeStyle = index === aboutIndex ? { transform: `scale(1.2) rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` } : { opacity: '0.5' };
-                                return <div className={styles.aboutpicsm} style={activeStyle} onClick={() => aboutChange(index)}>
+                                const activeStyle = index === aboutIndex ? { transform: `scale(1.2) rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` } : { opacity: '0.5', transform: `rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` };
+                                return <div key={item.name} className={styles.aboutpicsm} style={activeStyle} onClick={() => aboutChange(index)}>
                                     <div className={styles.aboutbg} style={{ backgroundImage: `url(${item.image})` }}></div>
                                 </div>
                             })
@@ -42,7 +41,7 @@ const About = ({ config, user }) => {
                     </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.5}deg)` }}>
+                    <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
                         <Flip left opposite when={show}>
                             <div className={styles.aboutblurb}>
                                 <p>{about[aboutIndex].blurb}</p>
@@ -50,7 +49,7 @@ const About = ({ config, user }) => {
                         </Flip>
                     </div>
 
-                    <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><SiteIcons.FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a>
+                    <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a>
                 </div>
             </div>
         </section>
