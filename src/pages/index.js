@@ -16,16 +16,16 @@ const HomePage = ({ data }) => {
   const user = data.github.user;
 
   const meta = data.allSite.nodes[0].siteMetadata;
-  const { config, title, description } = meta;
+  const { config, title, description, author, keywords } = meta;
 
   const blogPosts = data.allFeedBlog.nodes || [{ summary: 'No posts yet, please check in the future.' }];
 
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} author={author} keywords={keywords}>
       <Header user={user}/>
       <main className={styles.container}>
-        <About config={config} user={user}/>
-        <Projects user={user}/>
+        <About config={config} />
+        <Projects user={user} config={config}/>
         <Blog props={{ config: config.blog, posts: blogPosts }}/>
       </main>
       <Footer lastBuild={data.allSiteBuildMetadata.nodes[0].buildTime} links={config.links}/>
@@ -49,7 +49,12 @@ export const query = graphql`
         siteMetadata {
           title
           description
+          author
+          keywords
           config {
+            info {
+              resumeURL
+            }
             blog {
               enable
               feedURL
@@ -58,12 +63,14 @@ export const query = graphql`
               name
               url
             }
-            interests {
+            languages {
               name
               blurb
             }
-            languages {
+            toolkit
+            about {
               name
+              image
               blurb
             }
           }
@@ -81,7 +88,7 @@ export const query = graphql`
     }
     github {
       user(login: "bgunson") { 
-        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC) {
+        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 30, privacy: PUBLIC, ownerAffiliations: OWNER) {
           nodes {
             id
             name
@@ -105,35 +112,12 @@ export const query = graphql`
                 }
               }
             }
-            languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
-              edges {
-                node {
-                  id
-                  name
-                  color
-                }
-                size
-              }
-            }
           }
         }
         pinnedItems(first: 6) {
           nodes {
             ... on GitHub_Repository {
               id
-              name
-              url
-              description
-              languages(orderBy: {field: SIZE, direction: DESC}, first: 8) {
-                edges {
-                  node {
-                    id
-                    name
-                    color
-                  }
-                  size
-                }
-              }
             }
           }
         }

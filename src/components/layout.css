@@ -107,3 +107,7 @@ footer a {
 circle {
   cursor: pointer;
 }
+
+.label-text {
+  cursor: pointer;
+}

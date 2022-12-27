@@ -1,6 +1,6 @@
 {
   "name": "my-site",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": true,
   "description": "My Site",
   "author": "Bennett Gunson",
@@ -18,10 +18,8 @@
   "dependencies": {
     "@weknow/react-bubble-chart-d3": "^1.0.12",
     "gatsby": "^4.5.1",
-    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-manifest": "^4.5.1",
     "gatsby-plugin-react-helmet": "^5.5.0",
-    "gatsby-plugin-sitemap": "^5.24.0",
     "gatsby-source-graphql": "^4.5.1",
     "gatsby-source-rss-feed": "^1.2.2",
     "react": "^17.0.1",
