@@ -16,15 +16,15 @@ const HomePage = ({ data }) => {
   const user = data.github.user;
 
   const meta = data.allSite.nodes[0].siteMetadata;
-  const { config, title, description } = meta;
+  const { config, title, description, author, keywords } = meta;
 
   const blogPosts = data.allFeedBlog.nodes || [{ summary: 'No posts yet, please check in the future.' }];
 
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} author={author} keywords={keywords}>
       <Header user={user}/>
       <main className={styles.container}>
-        <About config={config} user={user}/>
+        <About config={config} />
         <Projects user={user} config={config}/>
         <Blog props={{ config: config.blog, posts: blogPosts }}/>
       </main>
@@ -49,6 +49,8 @@ export const query = graphql`
         siteMetadata {
           title
           description
+          author
+          keywords
           config {
             info {
               resumeURL

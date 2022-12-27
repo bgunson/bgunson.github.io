@@ -6,6 +6,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Hi, I'm Bennett`,
+    author: 'Bennett Gunson',
+    keywords: 'software, developer, full stack, web design, web developer',
     description: `Computer Science student, Software Developer, Outdoorsman`,
     siteUrl: `https://bengunson.me`,
     config: config
@@ -13,11 +15,11 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-manifest', // breaks canvas background
+      resolve: 'gatsby-plugin-manifest', 
       options: {
         icon: 'src/images/favicon.png',
         name: "Bennett Gunson",
-        short_name: "BG",
+        short_name: "bengunson",
         start_url: "/",
         background_color: "black",
         theme_color: "orange",

@@ -3,7 +3,7 @@ import * as styles from '../../styles/Home.module.css'
 import { Flip } from 'react-reveal';
 import { FaFile } from 'react-icons/fa';
 
-const About = ({ config, user }) => {
+const About = ({ config }) => {
 
     const about = config.about;
     const [aboutIndex, setAboutIndex] = React.useState(0);
