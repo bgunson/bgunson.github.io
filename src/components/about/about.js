@@ -18,7 +18,7 @@ const About = ({ config }) => {
 
     return (
         <section id="about" className={styles.about}>
-            <div className={styles.grid} style={{ gap: '50px' }}>
+            <div className={styles.grid} style={{ gap: '50px', justifyContent: 'flex-start'}}>
                 <div className={styles.aboutpics}>
                     <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
                         <Flip right opposite when={show}>
@@ -48,9 +48,12 @@ const About = ({ config }) => {
                             </div>
                         </Flip>
                     </div>
-
-                    <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a>
+                    {/* <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a> */}
                 </div>
+
+            </div>
+            <div style={{marginTop: '5rem', height: 'auto'}}>
+                <a href={config.info.resumeURL} role="button" className={styles.linkbtn}>View my CV</a>
             </div>
         </section>
     )

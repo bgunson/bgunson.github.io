@@ -6,11 +6,11 @@ module.exports = {
 
     about: [
         { name: 'whoami', image: 'https://avatars.githubusercontent.com/u/47361247?u=26e002603f0e83a74e77f5372b020da8e5fb4537&v=4', blurb: 'I am student and developer based in Calgary, Alberta. I enjoy the outdoors as much as I do programming so my life consists of a balance between screen and play time.' },
-        { name: 'Fly Fisherman', image: 'images/fly_fishing.webp', blurb: 'My passion is fly fishing. In the summer you can find me and my fishing buddies on the river having a good time.' },
-        { name: 'Mountain Biker', image: 'images/mtb.webp', blurb: 'Mountain biking fulfils my need for the extreme. I also enjoy tuning and repairing bicycles.' },
-        { name: 'Outdoorsman', image: 'images/outdoors.webp', blurb: 'Whether it\'s camping, hiking, or backpacking if I can be outside I will be. I have a deep appreciation for nature and everything it has to offer.' },
-        { name: 'DIYer', image: 'images/diy.webp', blurb: 'I fix whatever I can myself because it saves time and money! From DIY car maintenance and modifications, I like to tackle any project small or large.' },
-        { name: 'Traveller', image: 'images/travel.webp', blurb: 'I am lucky to have been able to see over a dozen different and unique countries and cultures throughout the world and still want to see more!' },
+        { name: 'Fly Fisherman', image: 'images/fly_fishing.png', blurb: 'My passion is fly fishing. In the summer you can find me and my fishing buddies on the river having a good time.' },
+        { name: 'Mountain Biker', image: 'images/mtb.png', blurb: 'Mountain biking fulfils my need for the extreme. I also enjoy tuning and repairing bicycles.' },
+        { name: 'Outdoorsman', image: 'images/outdoors.png', blurb: 'Whether it\'s camping, hiking, or backpacking if I can be outside I will be. I have a deep appreciation for nature and everything it has to offer.' },
+        { name: 'DIYer', image: 'images/diy.png', blurb: 'I fix whatever I can myself because it saves time and money! From DIY car maintenance and modifications, I like to tackle any project small or large.' },
+        { name: 'Traveller', image: 'images/travel.png', blurb: 'I am lucky to have been able to see over a dozen different and unique countries and cultures throughout the world and still want to see more!' },
     ],
 
     toolkit: [
