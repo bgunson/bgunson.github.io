@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as styles from '../../styles/Home.module.css'
 import { Flip } from 'react-reveal';
-import { FaFile } from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
+import { Link } from 'react-scroll';
+
 
 const About = ({ config }) => {
 
@@ -18,6 +20,7 @@ const About = ({ config }) => {
 
     return (
         <section id="about" className={styles.about}>
+            
             <div className={styles.grid} style={{ gap: '50px', justifyContent: 'flex-start'}}>
                 <div className={styles.aboutpics}>
                     <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
@@ -52,9 +55,11 @@ const About = ({ config }) => {
                 </div>
 
             </div>
-            <div style={{marginTop: '5rem', height: 'auto'}}>
+            <div style={{margin: '4rem 0', height: 'auto'}}>
                 <a href={config.info.resumeURL} role="button" className={styles.linkbtn}>View my CV</a>
             </div>
+            <Link to="projects" offset={100} smooth duration={1000}><FaAngleDown size={50} style={{marginTop: '10%', cursor: 'pointer', }}/></Link>
+            {/* <div className={styles.aboutbottom}></div> */}
         </section>
     )
 

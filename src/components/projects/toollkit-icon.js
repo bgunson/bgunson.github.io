@@ -22,7 +22,7 @@ const ToolkitIcon = ({ tool }) => {
         }
     }
 
-    return <a href={`https://github.com/topics/${tool}`} onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)} className={styles.tool}><span className={styles.toolicon} dangerouslySetInnerHTML={{ __html: `<i class="devicon-${tool}-${classList} colored"></i>` }}></span></a>
+    return <a aria-label={tool} href={`https://github.com/topics/${tool}`} onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)} className={styles.tool}><span className={styles.toolicon} dangerouslySetInnerHTML={{ __html: `<i class="devicon-${tool}-${classList} colored"></i>` }}></span></a>
 
 }
 

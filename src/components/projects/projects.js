@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { MdCancel } from 'react-icons/md';
 import { Fade } from 'react-reveal';
 import * as styles from '../../styles/Home.module.css';
 import LangChart from './lang-chart';
@@ -57,7 +56,7 @@ const Projects = ({ user, config }) => {
         setRepos(show);
         setTimeout(() => {
             setShowRepos(true);
-            document.querySelector("#projects").scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            document.querySelector("#repos").scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 500);
     }
 
@@ -69,7 +68,8 @@ const Projects = ({ user, config }) => {
 
 
     return (
-        <section>
+        <section style={{paddingTop: 0}} id="projects">
+            <div className={styles.aboutbottom}></div>
             <div className={styles.grid}>
                 <Fade left>
                     <LangChart repos={user.repositories} blurbs={config.languages} onSelect={(l) => handleFilterClick({ value: l, type: 'language' })} />
@@ -96,23 +96,23 @@ const Projects = ({ user, config }) => {
                     </div>
                 </Fade>
             </div>
-            <div id="projects" className={styles.projects}>
+            <div className={styles.projects} id="repos">
                 <Fade left opposite cascade when={showRepos} duration={500}>
                     <div className={styles.inline}>
                         <h2>
                             {
                                 filter ?
-                                    <span>{filter.type === 'language' ? filter.value : topics[filter.value]} projects</span>
+                                    <span style={{textTransform: 'capitalize'}}>{filter.type === 'language' ? filter.value : topics[filter.value]} projects</span>
                                     :
                                     <span>Pinned Projects</span>
                             }
                         </h2>
-                        <div>
+                        <div style={{margin: '12px 0'}}>
                             {
                                 filter ?
-                                    <span role="button" tabIndex={-1} className={styles.clearfilter} onClick={() => handleFilterClick(null)} onKeyDown={() => handleFilterClick(null)}><MdCancel size={24} style={{ verticalAlign: 'middle' }} /> Clear filter</span>
+                                    <span className={styles.linkbtn} style={{fontSize: 'unset'}} role="button" tabIndex={-1} onClick={() => handleFilterClick(null)} onKeyDown={() => handleFilterClick(null)}>Clear filter&nbsp;&nbsp;&#x2715;</span>
                                     :
-                                    <a href={`https://github.com/${user.login}?tab=repositories`}>See All &rarr;</a>
+                                    <a className={styles.linkbtn} style={{fontSize: 'unset'}} href={`https://github.com/${user.login}?tab=repositories`}>See all&nbsp;&nbsp;&rarr;</a>
                             }
                         </div>
                     </div>
