@@ -1,7 +1,8 @@
+
 let orbitals;
 let thetaM = 1;
 let thetaInterval;
-const bg = 10;
+const bg = 16;
 
 function setup(){
     var canvas = createCanvas(displayWidth, displayHeight, WEBGL);
