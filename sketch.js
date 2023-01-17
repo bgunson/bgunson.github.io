@@ -11,7 +11,7 @@ function setup(){
     noStroke();
     fill(204);
     orbitals=new Array();
-    let numO = int(random(5, 16));
+    let numO = int(random(5, 12));
     for(let i = 0;i < numO;i++) {
         orbitals.push(new Orbital());
     }
@@ -50,7 +50,7 @@ class Orbital{
     constructor(){
         this.posY = 0;
         this.minSize = random(5, 16);
-        this.maxSize=random(50, 200);
+        this.maxSize=random(50, 180);
         this.posX=this.posY=0;
         this.rad=this.maxSize;
         this.dRad=random(0.01, 0.15);
