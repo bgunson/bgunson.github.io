@@ -1,8 +1,6 @@
 import * as React from 'react';
 import * as styles from '../../styles/Home.module.css'
 import { Flip } from 'react-reveal';
-import { FaAngleDown } from 'react-icons/fa';
-import { Link } from 'react-scroll';
 
 
 const About = ({ config }) => {
@@ -19,48 +17,52 @@ const About = ({ config }) => {
     }
 
     return (
-        <section id="about" className={styles.about}>
-            
-            <div className={styles.grid} style={{ gap: '50px', justifyContent: 'flex-start'}}>
-                <div className={styles.aboutpics}>
-                    <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
-                        <Flip right opposite when={show}>
-                            <div className={styles.aboutpic} >
-                                <div className={styles.aboutbg} style={{ backgroundImage: `url(${about[aboutIndex].image})` }}></div>
-                                <p style={{ fontSize: '30px' }} className={styles.aboutpicname}>{about[aboutIndex].name}</p>
-                            </div>
-                        </Flip>
-                    </div>
+        <div>
+            <div className={styles.abouttop}></div>
 
-                    <div className={styles.aboutpicselect}>
-                        {
-                            about.map((item, index) => {
-                                const activeStyle = index === aboutIndex ? { transform: `scale(1.2) rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` } : { opacity: '0.5', transform: `rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` };
-                                return <div key={item.name} className={styles.aboutpicsm} style={activeStyle} onClick={() => aboutChange(index)}>
-                                    <div className={styles.aboutbg} style={{ backgroundImage: `url(${item.image})` }}></div>
+            <section id="about" className={styles.about}>
+                <div className={styles.grid} style={{ gap: '50px', justifyContent: 'flex-start' }}>
+                    <div className={styles.aboutpics}>
+                        <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
+                            <Flip right opposite when={show}>
+                                <div className={styles.aboutpic} >
+                                    <div className={styles.aboutbg} style={{ backgroundImage: `url(${about[aboutIndex].image})` }}></div>
+                                    <p style={{ fontSize: '30px' }} className={styles.aboutpicname}>{about[aboutIndex].name}</p>
                                 </div>
-                            })
-                        }
-                    </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
-                        <Flip left opposite when={show}>
-                            <div className={styles.aboutblurb}>
-                                <p>{about[aboutIndex].blurb}</p>
-                            </div>
-                        </Flip>
-                    </div>
-                    {/* <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a> */}
-                </div>
+                            </Flip>
+                        </div>
 
-            </div>
-            <div style={{margin: '4rem 0', height: 'auto'}}>
-                <a href={config.info.resumeURL} role="button" className={styles.linkbtn}>View my CV</a>
-            </div>
-            <Link to="projects" offset={100} smooth duration={1000}><FaAngleDown size={50} style={{marginTop: '10%', cursor: 'pointer', }}/></Link>
-            {/* <div className={styles.aboutbottom}></div> */}
-        </section>
+                        <div className={styles.aboutpicselect}>
+                            {
+                                about.map((item, index) => {
+                                    const activeStyle = index === aboutIndex ? { transform: `scale(1.2) rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` } : { opacity: '0.5', transform: `rotate(${(Math.random() * (-12) + 6) * 1.5}deg)` };
+                                    return <div key={item.name} className={styles.aboutpicsm} style={activeStyle} onClick={() => aboutChange(index)}>
+                                        <div className={styles.aboutbg} style={{ backgroundImage: `url(${item.image})` }}></div>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-between' }}>
+                        <div style={{ transform: `rotate(${(Math.random() * (-6) + 3) * 1.8}deg)` }}>
+                            <Flip left opposite when={show}>
+                                <div className={styles.aboutblurb}>
+                                    <p>{about[aboutIndex].blurb}</p>
+                                </div>
+                            </Flip>
+                        </div>
+                        {/* <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a> */}
+                    </div>
+
+                </div>
+                <div style={{ margin: '4rem 0', height: 'auto' }}>
+                    <a href={config.info.resumeURL} role="button" className={styles.linkbtn}>View my CV</a>
+                </div>
+            </section>
+
+            <div className={styles.aboutbottom}></div>
+        </div>
+
     )
 
 }

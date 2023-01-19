@@ -69,7 +69,6 @@ const Projects = ({ user, config }) => {
 
     return (
         <section style={{paddingTop: 0}} id="projects">
-            <div className={styles.aboutbottom}></div>
             <div className={styles.grid}>
                 <Fade left>
                     <LangChart repos={user.repositories} blurbs={config.languages} onSelect={(l) => handleFilterClick({ value: l, type: 'language' })} />

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'react-scroll';
 import {
     FaGithub,
     FaDocker,
@@ -50,7 +49,7 @@ const Footer = ({ lastBuild, links }) => {
 
             <div style={{ display: 'flex', flex: '1', alignItems: 'center', flexDirection: 'column', textAlign: 'center' }}>
 
-                <Link to="header" smooth duration={1000}><FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }}/></Link>
+                <FaAngleUp size={40} style={{margin: '20px', cursor: 'pointer' }} onClick={() => document.querySelector('#header').scrollIntoView({ behavior: 'smooth' })}/>
 
                 <div style={{ display: 'flex', marginBottom: '20px' }}>
 
