@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import * as React from 'react';
 import { Fade } from 'react-reveal';
 import * as styles from '../../styles/Home.module.css';
@@ -111,7 +112,7 @@ const Projects = ({ user, config }) => {
                                 filter ?
                                     <span className={styles.linkbtn} style={{fontSize: 'unset'}} role="button" tabIndex={-1} onClick={() => handleFilterClick(null)} onKeyDown={() => handleFilterClick(null)}>Clear filter&nbsp;&nbsp;&#x2715;</span>
                                     :
-                                    <a className={styles.linkbtn} style={{fontSize: 'unset'}} href={`https://github.com/${user.login}?tab=repositories`}>See all&nbsp;&nbsp;&rarr;</a>
+                                    <OutboundLink className={styles.linkbtn} style={{fontSize: 'unset'}} href={`https://github.com/${user.login}?tab=repositories`}>See all&nbsp;&nbsp;&rarr;</OutboundLink>
                             }
                         </div>
                     </div>
@@ -125,7 +126,7 @@ const Projects = ({ user, config }) => {
                                     const total = repo.languages.edges.length && repo.languages.edges.map(l => l.size).reduce((val, acc) => val + acc)
                                     return (
 
-                                        <a key={repo.id} href={repo.url} className={styles.card}>
+                                        <OutboundLink key={repo.id} href={repo.url} className={styles.card}>
                                             <h2 style={{ textAlign: 'left' }}>{repo.name} &rarr;</h2>
                                             <p>
                                                 {repo.description?.length > 100 ? repo.description.slice(0, 100) + '...' : repo.description}
@@ -143,7 +144,7 @@ const Projects = ({ user, config }) => {
                                                     })
                                                 }
                                             </div>
-                                        </a>
+                                        </OutboundLink>
 
                                     )
                                 }

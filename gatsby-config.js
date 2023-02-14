@@ -15,6 +15,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [
+          "G-55J56EDFPF"
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest', 
       options: {
         icon: 'src/images/favicon.png',

@@ -51,7 +51,6 @@ const About = ({ config }) => {
                                 </div>
                             </Flip>
                         </div>
-                        {/* <a href={config.info.resumeURL} className={styles.linkbtn} style={{ width: '100%', textAlign: 'center' }}><FaFile style={{ verticalAlign: 'middle' }} />&nbsp;&nbsp;Resume</a> */}
                     </div>
 
                 </div>

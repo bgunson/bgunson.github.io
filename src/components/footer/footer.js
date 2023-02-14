@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import * as React from 'react';
 import {
     FaGithub,
@@ -54,7 +55,7 @@ const Footer = ({ lastBuild, links }) => {
                 <div style={{ display: 'flex', marginBottom: '20px' }}>
 
                     {
-                        links.map(link => <a key={link.name} href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</a>)
+                        links.map(link => <OutboundLink key={link.name} href={link.url} aria-label={link.name} style={{ margin: '6px' }}>{getLinkIcon(link.name)}</OutboundLink>)
                     }
 
                 </div>
